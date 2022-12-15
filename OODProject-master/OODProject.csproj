@@ -64,11 +64,29 @@
     <Compile Include="Manage Flights.Designer.cs">
       <DependentUpon>Manage Flights.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageAirpots.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAirpots.Designer.cs">
+      <DependentUpon>ManageAirpots.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageBooking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageBooking.Designer.cs">
       <DependentUpon>ManageBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCity.Designer.cs">
+      <DependentUpon>ManageCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCountry.Designer.cs">
+      <DependentUpon>ManageCountry.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageUsers.cs">
       <SubType>Form</SubType>
@@ -150,8 +168,17 @@
     <EmbeddedResource Include="Manage Flights.resx">
       <DependentUpon>Manage Flights.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageAirpots.resx">
+      <DependentUpon>ManageAirpots.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageBooking.resx">
       <DependentUpon>ManageBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCity.resx">
+      <DependentUpon>ManageCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCountry.resx">
+      <DependentUpon>ManageCountry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>

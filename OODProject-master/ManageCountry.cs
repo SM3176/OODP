@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace OODProject
 {
-    public partial class DCMC : Form
+    public partial class ManageCountry : Form
     {
-        public DCMC()
+        public ManageCountry()
         {
             InitializeComponent();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
