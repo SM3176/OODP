@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DCMC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCMC.Designer.cs">
+      <DependentUpon>DCMC.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployerMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="AdminMain.resx">
       <DependentUpon>AdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DCMC.resx">
+      <DependentUpon>DCMC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployerMain.resx">
       <DependentUpon>EmployerMain.cs</DependentUpon>

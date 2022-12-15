@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace OODProject
 {
-    public partial class Manage_Flights : Form
+    public partial class DCMC : Form
     {
-        public Manage_Flights()
+        public DCMC()
         {
             InitializeComponent();
-        }
-
-        private void Manage_Flights_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
