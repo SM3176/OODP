@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DCMC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCMC.Designer.cs">
+      <DependentUpon>DCMC.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployerMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,11 +79,29 @@
     <Compile Include="Manage Flights.Designer.cs">
       <DependentUpon>Manage Flights.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageAirpots.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAirpots.Designer.cs">
+      <DependentUpon>ManageAirpots.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageBooking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageBooking.Designer.cs">
       <DependentUpon>ManageBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCity.Designer.cs">
+      <DependentUpon>ManageCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCountry.Designer.cs">
+      <DependentUpon>ManageCountry.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageUsers.cs">
       <SubType>Form</SubType>
@@ -135,14 +174,26 @@
     <EmbeddedResource Include="AdminMain.resx">
       <DependentUpon>AdminMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DCMC.resx">
+      <DependentUpon>DCMC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployerMain.resx">
       <DependentUpon>EmployerMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage Flights.resx">
       <DependentUpon>Manage Flights.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageAirpots.resx">
+      <DependentUpon>ManageAirpots.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageBooking.resx">
       <DependentUpon>ManageBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCity.resx">
+      <DependentUpon>ManageCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCountry.resx">
+      <DependentUpon>ManageCountry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
@@ -195,6 +246,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

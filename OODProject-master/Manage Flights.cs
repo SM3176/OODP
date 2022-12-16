@@ -16,5 +16,10 @@ namespace OODProject
         {
             InitializeComponent();
         }
+
+        private void Manage_Flights_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
