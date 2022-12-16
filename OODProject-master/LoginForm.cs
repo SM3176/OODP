@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace OODProject
@@ -17,9 +18,10 @@ namespace OODProject
         {
             InitializeComponent();
         }
-        
 
-        SqlConnection conn= new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OODP\OODP\OODProject-master\Database.mdf;Integrated Security=True;Connect Timeout=30");
+        
+        SqlConnection conn= new SqlConnection(Properties.Settings.Default.con);
+        
         
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -83,6 +85,11 @@ namespace OODProject
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
             passwordTextBox.UseSystemPasswordChar = true;
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

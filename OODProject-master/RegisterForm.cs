@@ -30,7 +30,7 @@ namespace OODProject
             var date = birthdayPicker.Value.Date;
             var now = birthdayPicker.Value = System.DateTime.Now;
             int age = now.Year - date.Year;
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OODP\OODP\OODProject-master\Database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection conn = new SqlConnection(Properties.Settings.Default.con);
             
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
@@ -70,6 +70,11 @@ namespace OODProject
         private void passwordTextField_TextChanged(object sender, EventArgs e)
         {
             passwordTextField.UseSystemPasswordChar = true;
+
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

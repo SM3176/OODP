@@ -45,10 +45,9 @@ namespace OODProject
             // registerButton
             // 
             this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.Location = new System.Drawing.Point(208, 247);
-            this.registerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.registerButton.Location = new System.Drawing.Point(156, 201);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(144, 37);
+            this.registerButton.Size = new System.Drawing.Size(108, 30);
             this.registerButton.TabIndex = 13;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
@@ -56,28 +55,25 @@ namespace OODProject
             // 
             // userNameTextBox
             // 
-            this.userNameTextBox.Location = new System.Drawing.Point(144, 137);
-            this.userNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userNameTextBox.Location = new System.Drawing.Point(108, 111);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(265, 22);
+            this.userNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.userNameTextBox.TabIndex = 11;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(144, 107);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTextBox.Location = new System.Drawing.Point(108, 87);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(265, 22);
+            this.emailTextBox.Size = new System.Drawing.Size(200, 20);
             this.emailTextBox.TabIndex = 10;
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.Location = new System.Drawing.Point(16, 106);
-            this.emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailLabel.Location = new System.Drawing.Point(12, 86);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(62, 24);
+            this.emailLabel.Size = new System.Drawing.Size(49, 18);
             this.emailLabel.TabIndex = 8;
             this.emailLabel.Text = "Email:";
             // 
@@ -85,10 +81,9 @@ namespace OODProject
             // 
             this.registerLabel.AutoSize = true;
             this.registerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerLabel.Location = new System.Drawing.Point(147, 33);
-            this.registerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.registerLabel.Location = new System.Drawing.Point(110, 27);
             this.registerLabel.Name = "registerLabel";
-            this.registerLabel.Size = new System.Drawing.Size(157, 42);
+            this.registerLabel.Size = new System.Drawing.Size(124, 33);
             this.registerLabel.TabIndex = 7;
             this.registerLabel.Text = "Register";
             // 
@@ -96,10 +91,9 @@ namespace OODProject
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(16, 142);
-            this.userNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.userNameLabel.Location = new System.Drawing.Point(12, 115);
             this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(102, 24);
+            this.userNameLabel.Size = new System.Drawing.Size(81, 18);
             this.userNameLabel.TabIndex = 14;
             this.userNameLabel.Text = "Username:";
             // 
@@ -107,27 +101,24 @@ namespace OODProject
             // 
             this.birthdayLabel.AutoSize = true;
             this.birthdayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birthdayLabel.Location = new System.Drawing.Point(21, 172);
-            this.birthdayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.birthdayLabel.Location = new System.Drawing.Point(16, 140);
             this.birthdayLabel.Name = "birthdayLabel";
-            this.birthdayLabel.Size = new System.Drawing.Size(82, 24);
+            this.birthdayLabel.Size = new System.Drawing.Size(65, 18);
             this.birthdayLabel.TabIndex = 16;
             this.birthdayLabel.Text = "Birthday:";
             // 
             // birthdayPicker
             // 
-            this.birthdayPicker.Location = new System.Drawing.Point(144, 172);
-            this.birthdayPicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.birthdayPicker.Location = new System.Drawing.Point(108, 140);
             this.birthdayPicker.Name = "birthdayPicker";
-            this.birthdayPicker.Size = new System.Drawing.Size(265, 22);
+            this.birthdayPicker.Size = new System.Drawing.Size(200, 20);
             this.birthdayPicker.TabIndex = 17;
             // 
             // passwordTextField
             // 
-            this.passwordTextField.Location = new System.Drawing.Point(144, 202);
-            this.passwordTextField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordTextField.Location = new System.Drawing.Point(108, 164);
             this.passwordTextField.Name = "passwordTextField";
-            this.passwordTextField.Size = new System.Drawing.Size(265, 22);
+            this.passwordTextField.Size = new System.Drawing.Size(200, 20);
             this.passwordTextField.TabIndex = 19;
             this.passwordTextField.TextChanged += new System.EventHandler(this.passwordTextField_TextChanged);
             // 
@@ -135,20 +126,18 @@ namespace OODProject
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(21, 202);
-            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.passwordLabel.Location = new System.Drawing.Point(16, 164);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(97, 24);
+            this.passwordLabel.Size = new System.Drawing.Size(79, 18);
             this.passwordLabel.TabIndex = 18;
             this.passwordLabel.Text = "Password:";
             // 
             // backButton
             // 
             this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(25, 247);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4);
+            this.backButton.Location = new System.Drawing.Point(19, 201);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(144, 37);
+            this.backButton.Size = new System.Drawing.Size(108, 30);
             this.backButton.TabIndex = 20;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
@@ -156,9 +145,9 @@ namespace OODProject
             // 
             // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 431);
+            this.ClientSize = new System.Drawing.Size(345, 350);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.passwordTextField);
             this.Controls.Add(this.passwordLabel);
@@ -170,9 +159,9 @@ namespace OODProject
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.registerLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RegisterForm";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
