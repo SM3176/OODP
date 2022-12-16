@@ -17,13 +17,14 @@ namespace OODProject
         public RegisterForm()
         {
             InitializeComponent();
-            
+            this.CenterToScreen();
+
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();
-            this.Hide();
+            this.Close();
             login.Show();
         }
 
@@ -55,7 +56,7 @@ namespace OODProject
                 conn.Close();
                 MessageBox.Show("Success!!");
                 
-                this.Hide();
+                this.Close();
                 LoginForm login = new LoginForm();
                 login.Show();
 

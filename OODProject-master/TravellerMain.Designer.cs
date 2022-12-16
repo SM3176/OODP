@@ -31,10 +31,10 @@ namespace OODProject
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TravellerMain));
-            this.button1 = new System.Windows.Forms.Button();
+            this.bFlights = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.messages = new System.Windows.Forms.Button();
+            this.vBookingD = new System.Windows.Forms.Button();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -45,49 +45,51 @@ namespace OODProject
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.logOutBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // bFlights
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(652, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Book Flights";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bFlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bFlights.Location = new System.Drawing.Point(309, 39);
+            this.bFlights.Name = "bFlights";
+            this.bFlights.Size = new System.Drawing.Size(131, 32);
+            this.bFlights.TabIndex = 0;
+            this.bFlights.Text = "Book Flights";
+            this.bFlights.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 36);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 88);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 319);
+            this.dataGridView1.Size = new System.Drawing.Size(760, 345);
             this.dataGridView1.TabIndex = 2;
             // 
-            // button7
+            // messages
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(12, 367);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(172, 33);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "View Messages ";
-            this.button7.UseVisualStyleBackColor = true;
+            this.messages.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messages.Location = new System.Drawing.Point(611, 39);
+            this.messages.Name = "messages";
+            this.messages.Size = new System.Drawing.Size(160, 33);
+            this.messages.TabIndex = 8;
+            this.messages.Text = "View Messages ";
+            this.messages.UseVisualStyleBackColor = true;
+            this.messages.Click += new System.EventHandler(this.messages_Click);
             // 
-            // button3
+            // vBookingD
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(204, 367);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 33);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "View Booking Detials";
-            this.button3.UseVisualStyleBackColor = true;
+            this.vBookingD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vBookingD.Location = new System.Drawing.Point(446, 39);
+            this.vBookingD.Name = "vBookingD";
+            this.vBookingD.Size = new System.Drawing.Size(159, 33);
+            this.vBookingD.TabIndex = 10;
+            this.vBookingD.Text = "View Booking Detials";
+            this.vBookingD.UseVisualStyleBackColor = true;
             // 
             // bindingNavigator1
             // 
@@ -184,16 +186,28 @@ namespace OODProject
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutBtn.Location = new System.Drawing.Point(13, 41);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(131, 32);
+            this.logOutBtn.TabIndex = 12;
+            this.logOutBtn.Text = "Log Out";
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
             // TravellerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 415);
+            this.ClientSize = new System.Drawing.Size(783, 445);
+            this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.vBookingD);
+            this.Controls.Add(this.messages);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bFlights);
             this.Name = "TravellerMain";
             this.Text = "Traveler Main Menu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -207,10 +221,10 @@ namespace OODProject
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bFlights;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button messages;
+        private System.Windows.Forms.Button vBookingD;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -221,5 +235,6 @@ namespace OODProject
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.Button logOutBtn;
     }
 }

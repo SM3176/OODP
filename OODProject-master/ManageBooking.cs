@@ -15,11 +15,12 @@ namespace OODProject
         public ManageBooking()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void backBtn_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

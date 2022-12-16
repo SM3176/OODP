@@ -17,6 +17,7 @@ namespace OODProject
         public LoginForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         
@@ -26,52 +27,61 @@ namespace OODProject
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            String name, password;
-
-            name = userTextBox.Text;
-            password = passwordTextBox.Text;
-
-            try
+            if(userTextBox.Text != "" && passwordTextBox.Text != "")
             {
-                String querry = "select userName, userPassword, roleID From [dbo].[User] where userName = '" + name+"' and userPassword = '"+password+"'";
-                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+                String name, password;
 
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
+                name = userTextBox.Text;
+                password = passwordTextBox.Text;
 
-                if(dt.Rows.Count > 0)
+                try
                 {
-                    name = userTextBox.Text;
-                    password = passwordTextBox.Text;
-         
-                    if(dt.Rows[0].ItemArray[2].ToString() == "1")
+                    String querry = "select userName, userPassword, roleID From [dbo].[User] where userName = '" + name + "' and userPassword = '" + password + "'";
+                    SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
                     {
-                        AdminMain admin = new AdminMain();
-                        admin.Show();
-                        this.Hide();
-                    }else if(dt.Rows[0].ItemArray[2].ToString() == "2")
-                    {
-                        TravellerMain traveller = new TravellerMain();
-                        this.Hide();
-                        traveller.Show();
-                    }
-                    else if(dt.Rows[0].ItemArray[2].ToString() == "3")
-                    {
-                        EmployerMain Employer = new EmployerMain();
-                        this.Hide();
-                        Employer.Show();
+                        name = userTextBox.Text;
+                        password = passwordTextBox.Text;
+
+                        if (dt.Rows[0].ItemArray[2].ToString() == "1")
+                        {
+                            AdminMain admin = new AdminMain();
+                            admin.Show();
+                            this.Hide();
+                        }
+                        else if (dt.Rows[0].ItemArray[2].ToString() == "2")
+                        {
+                            TravellerMain traveller = new TravellerMain();
+                            this.Hide();
+                            traveller.Show();
+                        }
+                        else if (dt.Rows[0].ItemArray[2].ToString() == "3")
+                        {
+                            EmployerMain Employer = new EmployerMain();
+                            this.Hide();
+                            Employer.Show();
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                        conn.Close();
+                }
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show("Enter Values");
             }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                    conn.Close();
-            }
+            
 
         }
 
@@ -79,7 +89,7 @@ namespace OODProject
         {
             RegisterForm register = new RegisterForm();
             register.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)

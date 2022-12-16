@@ -15,21 +15,12 @@ namespace OODProject
         public ManageUsers()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void backBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

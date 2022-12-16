@@ -15,11 +15,12 @@ namespace OODProject
         public PaymentForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void backBtn_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

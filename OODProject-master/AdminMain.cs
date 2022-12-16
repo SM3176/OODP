@@ -15,6 +15,62 @@ namespace OODProject
         public AdminMain()
         {
             InitializeComponent();
+            this.CenterToScreen();
+        }
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            this.Close() ;
+            LoginForm login = new LoginForm();
+            login.Show();
+        }
+
+        private void messages_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Messages mess = new Messages();
+            mess.ShowDialog();
+            this.Show();
+        }
+
+        private void manageServices_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Service ser = new Service();
+            ser.ShowDialog();
+            this.Show();
+        }
+
+        private void manageUsers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageUsers user = new ManageUsers();
+            user.ShowDialog();
+            this.Show();
+        }
+
+        private void ManageBookings_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageBooking book = new ManageBooking();
+            book.ShowDialog();
+            this.Show();
+        }
+
+        private void ManageFlights_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Manage_Flights fly = new Manage_Flights();
+            fly.ShowDialog();
+            this.Show();
+        }
+
+        private void dcmc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DCMC dc = new DCMC();
+            dc.ShowDialog();
+            this.Show();
         }
     }
 }

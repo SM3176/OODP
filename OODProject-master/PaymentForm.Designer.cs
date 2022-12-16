@@ -35,12 +35,12 @@ namespace OODProject
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cardTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.expireTextBox = new System.Windows.Forms.TextBox();
+            this.cvcTextBox = new System.Windows.Forms.TextBox();
+            this.submitBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +52,6 @@ namespace OODProject
             this.label1.Size = new System.Drawing.Size(219, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Payment Form";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -94,67 +93,68 @@ namespace OODProject
             this.label5.TabIndex = 4;
             this.label5.Text = "CVC:";
             // 
-            // textBox1
+            // cardTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 20);
-            this.textBox1.TabIndex = 5;
+            this.cardTextBox.Location = new System.Drawing.Point(139, 113);
+            this.cardTextBox.Name = "cardTextBox";
+            this.cardTextBox.Size = new System.Drawing.Size(207, 20);
+            this.cardTextBox.TabIndex = 5;
             // 
-            // textBox2
+            // nameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 145);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 20);
-            this.textBox2.TabIndex = 6;
+            this.nameTextBox.Location = new System.Drawing.Point(139, 145);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(207, 20);
+            this.nameTextBox.TabIndex = 6;
             // 
-            // textBox3
+            // expireTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(259, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(87, 20);
-            this.textBox3.TabIndex = 7;
+            this.expireTextBox.Location = new System.Drawing.Point(259, 201);
+            this.expireTextBox.Name = "expireTextBox";
+            this.expireTextBox.Size = new System.Drawing.Size(87, 20);
+            this.expireTextBox.TabIndex = 7;
             // 
-            // textBox4
+            // cvcTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(69, 199);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(61, 20);
-            this.textBox4.TabIndex = 8;
+            this.cvcTextBox.Location = new System.Drawing.Point(69, 199);
+            this.cvcTextBox.Name = "cvcTextBox";
+            this.cvcTextBox.Size = new System.Drawing.Size(61, 20);
+            this.cvcTextBox.TabIndex = 8;
             // 
-            // button1
+            // submitBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(187, 250);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 34);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.Location = new System.Drawing.Point(187, 250);
+            this.submitBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.Size = new System.Drawing.Size(108, 34);
+            this.submitBtn.TabIndex = 9;
+            this.submitBtn.Text = "Submit";
+            this.submitBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // backBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(75, 250);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 34);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
+            this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.Location = new System.Drawing.Point(75, 250);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(97, 34);
+            this.backBtn.TabIndex = 10;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 345);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.backBtn);
+            this.Controls.Add(this.submitBtn);
+            this.Controls.Add(this.cvcTextBox);
+            this.Controls.Add(this.expireTextBox);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.cardTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -175,11 +175,11 @@ namespace OODProject
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox cardTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox expireTextBox;
+        private System.Windows.Forms.TextBox cvcTextBox;
+        private System.Windows.Forms.Button submitBtn;
+        private System.Windows.Forms.Button backBtn;
     }
 }

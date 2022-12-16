@@ -29,7 +29,7 @@ namespace OODProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,15 +42,16 @@ namespace OODProject
             this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // backBtn
             // 
-            this.button1.Location = new System.Drawing.Point(224, 325);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.backBtn.Location = new System.Drawing.Point(224, 325);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(77, 30);
+            this.backBtn.TabIndex = 0;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // label1
             // 
@@ -62,7 +63,6 @@ namespace OODProject
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Flight ID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -74,7 +74,6 @@ namespace OODProject
             this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "AirLine Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -130,7 +129,6 @@ namespace OODProject
             this.label7.Size = new System.Drawing.Size(119, 20);
             this.label7.TabIndex = 7;
             this.label7.Text = "Departure Time";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -180,8 +178,8 @@ namespace OODProject
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.backBtn);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "viewFlighDetails";
             this.Text = "view Fligh Details";
             this.ResumeLayout(false);
@@ -191,7 +189,7 @@ namespace OODProject
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

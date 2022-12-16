@@ -29,14 +29,13 @@ namespace OODProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.manageServices = new System.Windows.Forms.Button();
+            this.manageUsers = new System.Windows.Forms.Button();
+            this.ManageBookings = new System.Windows.Forms.Button();
+            this.ManageFlights = new System.Windows.Forms.Button();
+            this.dcmc = new System.Windows.Forms.Button();
+            this.messages = new System.Windows.Forms.Button();
+            this.backupDB = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,87 +43,84 @@ namespace OODProject
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.logOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // manageServices
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(213, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(400, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Manage Services";
-            this.button1.UseVisualStyleBackColor = true;
+            this.manageServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageServices.Location = new System.Drawing.Point(213, 108);
+            this.manageServices.Name = "manageServices";
+            this.manageServices.Size = new System.Drawing.Size(400, 36);
+            this.manageServices.TabIndex = 0;
+            this.manageServices.Text = "Manage Services";
+            this.manageServices.UseVisualStyleBackColor = true;
+            this.manageServices.Click += new System.EventHandler(this.manageServices_Click);
             // 
-            // button2
+            // manageUsers
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(213, 177);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(400, 36);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Manage Users";
-            this.button2.UseVisualStyleBackColor = true;
+            this.manageUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageUsers.Location = new System.Drawing.Point(213, 177);
+            this.manageUsers.Name = "manageUsers";
+            this.manageUsers.Size = new System.Drawing.Size(400, 36);
+            this.manageUsers.TabIndex = 1;
+            this.manageUsers.Text = "Manage Users";
+            this.manageUsers.UseVisualStyleBackColor = true;
+            this.manageUsers.Click += new System.EventHandler(this.manageUsers_Click);
             // 
-            // button3
+            // ManageBookings
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(213, 246);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(400, 36);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Manage Bookings";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ManageBookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageBookings.Location = new System.Drawing.Point(213, 246);
+            this.ManageBookings.Name = "ManageBookings";
+            this.ManageBookings.Size = new System.Drawing.Size(400, 36);
+            this.ManageBookings.TabIndex = 2;
+            this.ManageBookings.Text = "Manage Bookings";
+            this.ManageBookings.UseVisualStyleBackColor = true;
+            this.ManageBookings.Click += new System.EventHandler(this.ManageBookings_Click);
             // 
-            // button4
+            // ManageFlights
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(213, 315);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(400, 36);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Manage Flights";
-            this.button4.UseVisualStyleBackColor = true;
+            this.ManageFlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageFlights.Location = new System.Drawing.Point(213, 315);
+            this.ManageFlights.Name = "ManageFlights";
+            this.ManageFlights.Size = new System.Drawing.Size(400, 36);
+            this.ManageFlights.TabIndex = 3;
+            this.ManageFlights.Text = "Manage Flights";
+            this.ManageFlights.UseVisualStyleBackColor = true;
+            this.ManageFlights.Click += new System.EventHandler(this.ManageFlights_Click);
             // 
-            // button6
+            // dcmc
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(213, 384);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(400, 36);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "DCMC";
-            this.button6.UseVisualStyleBackColor = true;
+            this.dcmc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dcmc.Location = new System.Drawing.Point(213, 384);
+            this.dcmc.Name = "dcmc";
+            this.dcmc.Size = new System.Drawing.Size(400, 36);
+            this.dcmc.TabIndex = 5;
+            this.dcmc.Text = "DCMC";
+            this.dcmc.UseVisualStyleBackColor = true;
+            this.dcmc.Click += new System.EventHandler(this.dcmc_Click);
             // 
-            // button7
+            // messages
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(599, 12);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(121, 33);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Messages";
-            this.button7.UseVisualStyleBackColor = true;
+            this.messages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messages.Location = new System.Drawing.Point(599, 12);
+            this.messages.Name = "messages";
+            this.messages.Size = new System.Drawing.Size(121, 33);
+            this.messages.TabIndex = 6;
+            this.messages.Text = "Messages";
+            this.messages.UseVisualStyleBackColor = true;
+            this.messages.Click += new System.EventHandler(this.messages_Click);
             // 
-            // button8
+            // backupDB
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(569, 440);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(151, 29);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Database Backup";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(12, 439);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(113, 30);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "Log out";
-            this.button9.UseVisualStyleBackColor = true;
+            this.backupDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backupDB.Location = new System.Drawing.Point(569, 440);
+            this.backupDB.Name = "backupDB";
+            this.backupDB.Size = new System.Drawing.Size(151, 29);
+            this.backupDB.TabIndex = 7;
+            this.backupDB.Text = "Database Backup";
+            this.backupDB.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -186,25 +182,36 @@ namespace OODProject
             this.label6.TabIndex = 14;
             this.label6.Text = "Manage Destinations";
             // 
+            // logOut
+            // 
+            this.logOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOut.Location = new System.Drawing.Point(13, 13);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(95, 32);
+            this.logOut.TabIndex = 15;
+            this.logOut.Text = "Log Out";
+            this.logOut.UseVisualStyleBackColor = true;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            // 
             // AdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 481);
+            this.Controls.Add(this.logOut);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.backupDB);
+            this.Controls.Add(this.messages);
+            this.Controls.Add(this.dcmc);
+            this.Controls.Add(this.ManageFlights);
+            this.Controls.Add(this.ManageBookings);
+            this.Controls.Add(this.manageUsers);
+            this.Controls.Add(this.manageServices);
             this.Name = "AdminMain";
             this.Text = "Admind Form";
             this.ResumeLayout(false);
@@ -214,14 +221,13 @@ namespace OODProject
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button manageServices;
+        private System.Windows.Forms.Button manageUsers;
+        private System.Windows.Forms.Button ManageBookings;
+        private System.Windows.Forms.Button ManageFlights;
+        private System.Windows.Forms.Button dcmc;
+        private System.Windows.Forms.Button messages;
+        private System.Windows.Forms.Button backupDB;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -229,6 +235,7 @@ namespace OODProject
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button logOut;
     }
 }
 

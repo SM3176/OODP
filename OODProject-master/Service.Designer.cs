@@ -32,11 +32,11 @@ namespace OODProject
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.addTextBox = new System.Windows.Forms.TextBox();
+            this.deleteCombo = new System.Windows.Forms.ComboBox();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -72,69 +72,70 @@ namespace OODProject
             this.label3.TabIndex = 2;
             this.label3.Text = "Delete Service";
             // 
-            // textBox1
+            // addTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 101);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 4;
+            this.addTextBox.Location = new System.Drawing.Point(144, 101);
+            this.addTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.addTextBox.Name = "addTextBox";
+            this.addTextBox.Size = new System.Drawing.Size(184, 20);
+            this.addTextBox.TabIndex = 4;
             // 
-            // comboBox1
+            // deleteCombo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(144, 179);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(184, 21);
-            this.comboBox1.TabIndex = 5;
+            this.deleteCombo.FormattingEnabled = true;
+            this.deleteCombo.Location = new System.Drawing.Point(144, 179);
+            this.deleteCombo.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteCombo.Name = "deleteCombo";
+            this.deleteCombo.Size = new System.Drawing.Size(184, 21);
+            this.deleteCombo.TabIndex = 5;
             // 
-            // button1
+            // addBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(359, 101);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 29);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add Service";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Location = new System.Drawing.Point(359, 101);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(116, 29);
+            this.addBtn.TabIndex = 7;
+            this.addBtn.Text = "Add Service";
+            this.addBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // deleteBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(359, 179);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 29);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Delete Service";
-            this.button2.UseVisualStyleBackColor = true;
+            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Location = new System.Drawing.Point(359, 179);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(111, 29);
+            this.deleteBtn.TabIndex = 8;
+            this.deleteBtn.Text = "Delete Service";
+            this.deleteBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // backBtn
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(194, 251);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 32);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
+            this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.Location = new System.Drawing.Point(194, 251);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(111, 32);
+            this.backBtn.TabIndex = 9;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // Service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 341);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.backBtn);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.addBtn);
+            this.Controls.Add(this.deleteCombo);
+            this.Controls.Add(this.addTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Service";
             this.Text = "Manage Services";
             this.Load += new System.EventHandler(this.Service_Load);
@@ -148,10 +149,10 @@ namespace OODProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox addTextBox;
+        private System.Windows.Forms.ComboBox deleteCombo;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button backBtn;
     }
 }
