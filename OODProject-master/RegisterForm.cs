@@ -13,9 +13,11 @@ namespace OODProject
 {
     public partial class RegisterForm : Form
     {
+        
         public RegisterForm()
         {
             InitializeComponent();
+            
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -27,14 +29,16 @@ namespace OODProject
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            var date = birthdayPicker.Value.Date;
-            var now = birthdayPicker.Value = System.DateTime.Now;
-            int age = now.Year - date.Year;
-            SqlConnection conn = new SqlConnection(Properties.Settings.Default.con);
+           
+            SqlConnection conn = new SqlConnection();
             
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
+            var date = birthdayPicker.Value.Date;
+            var now = birthdayPicker.Value = System.DateTime.Now;
+            int age = now.Year - date.Year;
+
 
             cmd.CommandText = "insert into [dbo].[User](userName, userDOB, userEmail, userPassword, age, roleID) values(@name,@date,@email,@pass,@age,@role)";
             cmd.Parameters.AddWithValue("@name", userNameTextBox.Text);
@@ -43,26 +47,27 @@ namespace OODProject
             cmd.Parameters.AddWithValue("@pass", passwordTextField.Text);
             cmd.Parameters.AddWithValue("@age", age);
             cmd.Parameters.AddWithValue("@role", 2);
-
+            conn.ConnectionString = Properties.Settings.Default.con ;
             try
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                cmd.Dispose();
                 conn.Close();
-                MessageBox.Show("Success");
+                MessageBox.Show("Success!!");
+                
                 this.Hide();
                 LoginForm login = new LoginForm();
                 login.Show();
-                
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
             finally
             {
                 if (conn.State == ConnectionState.Open)
-                        conn.Close();
+                    conn.Close();
             }
 
         }
