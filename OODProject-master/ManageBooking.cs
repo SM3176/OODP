@@ -74,7 +74,7 @@ namespace OODProject
             flightCombo.DataSource = dt2;
             flightCombo.DisplayMember = "flightName";
             flightCombo.ValueMember = "flightID";
-            userCombo.DataSource = dt2;
+            userCombo.DataSource = dt3;
             userCombo.DisplayMember = "userName";
             userCombo.ValueMember = "userID";
             con.Close();
@@ -192,21 +192,63 @@ namespace OODProject
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
+            var date = datePicker.Value.Date;
 
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "UPDATE [dbo].[Booking] set seatNumber = @seat, bookingDate = @bDate, flightID = @flight, userID = @user where flightID = @id";
+            cmd.Parameters.AddWithValue("@seat", seatTextBox.Text);
+            cmd.Parameters.AddWithValue("@bDate", date);
+            cmd.Parameters.AddWithValue("@flightID", flightCombo.SelectedValue );
+            cmd.Parameters.AddWithValue("@userID", userCombo.SelectedValue);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM [dbo].[Flight] where 1=1 ";
+                DataTable dt = new DataTable();
+                sda = new SqlDataAdapter(cmd);
+                BindingSource bs = new BindingSource();
+                sda.Fill(dt);
+                bs.DataSource = dt;
+                manageGrid.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
+                con.Close();
+                MessageBox.Show("Success");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
         }
 
         private void manageGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
-            countryID = Convert.ToInt32(manageGrid.Rows[e.RowIndex].Cells[5].Value.ToString());
             rowID = Convert.ToInt32(manageGrid.Rows[e.RowIndex].Cells[0].Value.ToString());
-            airlineNameTextBox.Text = manageGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            arrivalDateTimePicker.Value = DateTime.Parse(manageGrid.Rows[e.RowIndex].Cells[2].Value.ToString());
-            capacityTextBox.Text = manageGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-            departureDateTimePicker.Value = DateTime.Parse(manageGrid.Rows[e.RowIndex].Cells[4].Value.ToString());
-            priceTextBox.Text = manageGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
-            countryComboBox.SelectedValue = countryID;
-            */
+            seatTextBox.Text = manageGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            datePicker.Value = DateTime.Parse(manageGrid.Rows[e.RowIndex].Cells[2].Value.ToString());
+            flightCombo.SelectedValue = flightID;
+            userCombo.SelectedValue = userID;
+            
+
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            datePicker.Value = DateTime.Now;
+            seatTextBox.Text = "";            
+            flightCombo.SelectedValue = 0;
+            userCombo.SelectedValue = 0;
         }
     }
 }
