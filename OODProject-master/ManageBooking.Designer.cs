@@ -300,6 +300,7 @@ namespace OODProject
             this.clearBtn.TabIndex = 32;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // refreshBtn
             // 
