@@ -32,17 +32,17 @@ namespace OODProject
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage_Flights));
             this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.arrivalDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.capacityTextBox = new System.Windows.Forms.TextBox();
+            this.airlineNameTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flightsGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.departureDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -53,15 +53,16 @@ namespace OODProject
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.updateFlightsBtn = new System.Windows.Forms.Button();
+            this.deleteFlightBtn = new System.Windows.Forms.Button();
+            this.addFlightBtn = new System.Windows.Forms.Button();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.countryComboBox = new System.Windows.Forms.ComboBox();
+            this.refreshBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -77,30 +78,30 @@ namespace OODProject
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // arrivalDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(152, 395);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(193, 20);
-            this.dateTimePicker1.TabIndex = 24;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 12, 15, 0, 0, 0, 0);
+            this.arrivalDateTimePicker.Location = new System.Drawing.Point(152, 395);
+            this.arrivalDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.arrivalDateTimePicker.Name = "arrivalDateTimePicker";
+            this.arrivalDateTimePicker.Size = new System.Drawing.Size(193, 20);
+            this.arrivalDateTimePicker.TabIndex = 24;
+            this.arrivalDateTimePicker.Value = new System.DateTime(2022, 12, 15, 0, 0, 0, 0);
             // 
-            // textBox2
+            // capacityTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(359, 395);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(65, 20);
-            this.textBox2.TabIndex = 22;
+            this.capacityTextBox.Location = new System.Drawing.Point(359, 395);
+            this.capacityTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.capacityTextBox.Name = "capacityTextBox";
+            this.capacityTextBox.Size = new System.Drawing.Size(65, 20);
+            this.capacityTextBox.TabIndex = 22;
             // 
-            // textBox1
+            // airlineNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 395);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
-            this.textBox1.TabIndex = 21;
+            this.airlineNameTextBox.Location = new System.Drawing.Point(11, 395);
+            this.airlineNameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.airlineNameTextBox.Name = "airlineNameTextBox";
+            this.airlineNameTextBox.Size = new System.Drawing.Size(125, 20);
+            this.airlineNameTextBox.TabIndex = 21;
             // 
             // label6
             // 
@@ -157,16 +158,17 @@ namespace OODProject
             this.label2.TabIndex = 16;
             this.label2.Text = "Airline Name";
             // 
-            // dataGridView1
+            // flightsGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 108);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(699, 232);
-            this.dataGridView1.TabIndex = 15;
+            this.flightsGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.flightsGridView1.Location = new System.Drawing.Point(11, 108);
+            this.flightsGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.flightsGridView1.Name = "flightsGridView1";
+            this.flightsGridView1.RowHeadersWidth = 51;
+            this.flightsGridView1.RowTemplate.Height = 24;
+            this.flightsGridView1.Size = new System.Drawing.Size(699, 232);
+            this.flightsGridView1.TabIndex = 15;
+            this.flightsGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.flightsGridView1_CellMouseClick);
             // 
             // label1
             // 
@@ -179,14 +181,14 @@ namespace OODProject
             this.label1.TabIndex = 14;
             this.label1.Text = "Manage Flights";
             // 
-            // dateTimePicker2
+            // departureDateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(445, 395);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(172, 20);
-            this.dateTimePicker2.TabIndex = 27;
-            this.dateTimePicker2.Value = new System.DateTime(2022, 12, 15, 0, 0, 0, 0);
+            this.departureDateTimePicker.Location = new System.Drawing.Point(445, 395);
+            this.departureDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.departureDateTimePicker.Name = "departureDateTimePicker";
+            this.departureDateTimePicker.Size = new System.Drawing.Size(172, 20);
+            this.departureDateTimePicker.TabIndex = 27;
+            this.departureDateTimePicker.Value = new System.DateTime(2022, 12, 15, 0, 0, 0, 0);
             // 
             // bindingNavigator1
             // 
@@ -283,45 +285,46 @@ namespace OODProject
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // button4
+            // updateFlightsBtn
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(267, 450);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(109, 33);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "Update Flights";
-            this.button4.UseVisualStyleBackColor = true;
+            this.updateFlightsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateFlightsBtn.Location = new System.Drawing.Point(267, 450);
+            this.updateFlightsBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.updateFlightsBtn.Name = "updateFlightsBtn";
+            this.updateFlightsBtn.Size = new System.Drawing.Size(109, 33);
+            this.updateFlightsBtn.TabIndex = 33;
+            this.updateFlightsBtn.Text = "Update Flights";
+            this.updateFlightsBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // deleteFlightBtn
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(128, 450);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 33);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "Delete Flights";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deleteFlightBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteFlightBtn.Location = new System.Drawing.Point(128, 450);
+            this.deleteFlightBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteFlightBtn.Name = "deleteFlightBtn";
+            this.deleteFlightBtn.Size = new System.Drawing.Size(123, 33);
+            this.deleteFlightBtn.TabIndex = 32;
+            this.deleteFlightBtn.Text = "Delete Flights";
+            this.deleteFlightBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // addFlightBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(11, 450);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 33);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Add Flights";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addFlightBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addFlightBtn.Location = new System.Drawing.Point(11, 450);
+            this.addFlightBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addFlightBtn.Name = "addFlightBtn";
+            this.addFlightBtn.Size = new System.Drawing.Size(101, 33);
+            this.addFlightBtn.TabIndex = 31;
+            this.addFlightBtn.Text = "Add Flights";
+            this.addFlightBtn.UseVisualStyleBackColor = true;
+            this.addFlightBtn.Click += new System.EventHandler(this.addFlightBtn_Click);
             // 
-            // textBox3
+            // priceTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(633, 394);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(77, 20);
-            this.textBox3.TabIndex = 34;
+            this.priceTextBox.Location = new System.Drawing.Point(633, 394);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(77, 20);
+            this.priceTextBox.TabIndex = 34;
             // 
             // label7
             // 
@@ -350,45 +353,58 @@ namespace OODProject
             this.button5.Text = "Clear Text";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // countryComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(589, 458);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 38;
+            this.countryComboBox.FormattingEnabled = true;
+            this.countryComboBox.Location = new System.Drawing.Point(589, 458);
+            this.countryComboBox.Name = "countryComboBox";
+            this.countryComboBox.Size = new System.Drawing.Size(121, 21);
+            this.countryComboBox.TabIndex = 38;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.Location = new System.Drawing.Point(11, 71);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(90, 28);
+            this.refreshBtn.TabIndex = 57;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // Manage_Flights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 509);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.refreshBtn);
+            this.Controls.Add(this.countryComboBox);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.priceTextBox);
+            this.Controls.Add(this.updateFlightsBtn);
+            this.Controls.Add(this.deleteFlightBtn);
+            this.Controls.Add(this.addFlightBtn);
             this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.departureDateTimePicker);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.arrivalDateTimePicker);
+            this.Controls.Add(this.capacityTextBox);
+            this.Controls.Add(this.airlineNameTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.flightsGridView1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Manage_Flights";
             this.Text = "Manage Flights";
             this.Load += new System.EventHandler(this.Manage_Flights_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -400,17 +416,17 @@ namespace OODProject
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker arrivalDateTimePicker;
+        private System.Windows.Forms.TextBox capacityTextBox;
+        private System.Windows.Forms.TextBox airlineNameTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView flightsGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker departureDateTimePicker;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -421,13 +437,14 @@ namespace OODProject
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button updateFlightsBtn;
+        private System.Windows.Forms.Button deleteFlightBtn;
+        private System.Windows.Forms.Button addFlightBtn;
+        private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox countryComboBox;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }
