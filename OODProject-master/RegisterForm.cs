@@ -20,20 +20,14 @@ namespace OODProject
             this.CenterToScreen();
 
         }
+        SqlConnection conn = new SqlConnection(Program.conn);
 
-        private void Back_Click(object sender, EventArgs e)
-        {
-            LoginForm login = new LoginForm();
-            this.Close();
-            login.Show();
-        }
+        SqlCommand cmd = new SqlCommand();
+        
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-           
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OODP\OODProject-master\Database.mdf;Integrated Security=True;Connect Timeout=30");
-            
-            SqlCommand cmd = new SqlCommand();
+
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
             var date = birthdayPicker.Value.Date;
@@ -48,7 +42,7 @@ namespace OODProject
             cmd.Parameters.AddWithValue("@pass", passwordTextField.Text);
             cmd.Parameters.AddWithValue("@age", age);
             cmd.Parameters.AddWithValue("@role", 2);
-            conn.ConnectionString = Properties.Settings.Default.con ;
+      
             try
             {
                 conn.Open();
@@ -77,6 +71,13 @@ namespace OODProject
         {
             passwordTextField.UseSystemPasswordChar = true;
 
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
         }
     }
 }

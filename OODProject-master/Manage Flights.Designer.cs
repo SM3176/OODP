@@ -40,7 +40,7 @@ namespace OODProject
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.flightsGridView1 = new System.Windows.Forms.DataGridView();
+            this.flightsGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.departureDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -59,10 +59,10 @@ namespace OODProject
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.countryComboBox = new System.Windows.Forms.ComboBox();
             this.refreshBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.flightsGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -154,17 +154,18 @@ namespace OODProject
             this.label2.TabIndex = 16;
             this.label2.Text = "Airline Name";
             // 
-            // flightsGridView1
+            // flightsGridView
             // 
-            this.flightsGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.flightsGridView1.Location = new System.Drawing.Point(15, 133);
-            this.flightsGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flightsGridView1.Name = "flightsGridView1";
-            this.flightsGridView1.RowHeadersWidth = 51;
-            this.flightsGridView1.RowTemplate.Height = 24;
-            this.flightsGridView1.Size = new System.Drawing.Size(932, 286);
-            this.flightsGridView1.TabIndex = 15;
-            this.flightsGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.flightsGridView1_CellMouseClick);
+            this.flightsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.flightsGridView.Location = new System.Drawing.Point(15, 133);
+            this.flightsGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flightsGridView.Name = "flightsGridView";
+            this.flightsGridView.RowHeadersWidth = 51;
+            this.flightsGridView.RowTemplate.Height = 24;
+            this.flightsGridView.Size = new System.Drawing.Size(932, 286);
+            this.flightsGridView.TabIndex = 15;
+            this.flightsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.flightsGridView_CellContentClick);
+            this.flightsGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.flightsGridView1_CellMouseClick);
             // 
             // label1
             // 
@@ -208,7 +209,7 @@ namespace OODProject
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(969, 31);
+            this.bindingNavigator1.Size = new System.Drawing.Size(969, 27);
             this.bindingNavigator1.TabIndex = 28;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -225,7 +226,7 @@ namespace OODProject
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -290,6 +291,7 @@ namespace OODProject
             this.updateFlightsBtn.TabIndex = 33;
             this.updateFlightsBtn.Text = "Update Flights";
             this.updateFlightsBtn.UseVisualStyleBackColor = true;
+            this.updateFlightsBtn.Click += new System.EventHandler(this.updateFlightsBtn_Click);
             // 
             // deleteFlightBtn
             // 
@@ -301,6 +303,7 @@ namespace OODProject
             this.deleteFlightBtn.TabIndex = 32;
             this.deleteFlightBtn.Text = "Delete Flights";
             this.deleteFlightBtn.UseVisualStyleBackColor = true;
+            this.deleteFlightBtn.Click += new System.EventHandler(this.deleteFlightBtn_Click);
             // 
             // addFlightBtn
             // 
@@ -341,16 +344,17 @@ namespace OODProject
             this.textBox4.Size = new System.Drawing.Size(0, 22);
             this.textBox4.TabIndex = 36;
             // 
-            // button5
+            // clearBtn
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(523, 554);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(145, 41);
-            this.button5.TabIndex = 37;
-            this.button5.Text = "Clear Text";
-            this.button5.UseVisualStyleBackColor = true;
+            this.clearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn.Location = new System.Drawing.Point(523, 554);
+            this.clearBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(145, 41);
+            this.clearBtn.TabIndex = 37;
+            this.clearBtn.Text = "Clear Text";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // countryComboBox
             // 
@@ -380,7 +384,7 @@ namespace OODProject
             this.ClientSize = new System.Drawing.Size(969, 626);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.countryComboBox);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.priceTextBox);
@@ -398,13 +402,13 @@ namespace OODProject
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.flightsGridView1);
+            this.Controls.Add(this.flightsGridView);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Manage_Flights";
             this.Text = "Manage Flights";
             this.Load += new System.EventHandler(this.Manage_Flights_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.flightsGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -424,7 +428,7 @@ namespace OODProject
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView flightsGridView1;
+        private System.Windows.Forms.DataGridView flightsGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker departureDateTimePicker;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
@@ -443,7 +447,7 @@ namespace OODProject
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.ComboBox countryComboBox;
         private System.Windows.Forms.Button refreshBtn;
     }

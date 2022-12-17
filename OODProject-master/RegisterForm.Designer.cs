@@ -152,7 +152,7 @@ namespace OODProject
             this.backButton.TabIndex = 20;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.Back_Click);
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // RegisterForm
             // 

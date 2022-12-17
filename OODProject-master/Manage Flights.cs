@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace OODProject
 {
+
     public partial class Manage_Flights : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OODP\OODProject-master\Database.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(Program.conn);
         DataTable dt;
         DataTable dt2;
         SqlDataAdapter sda;
@@ -49,7 +50,7 @@ namespace OODProject
             BindingSource bs = new BindingSource();
             sda.Fill(dt);
             bs.DataSource = dt;
-            flightsGridView1.DataSource = bs;
+            flightsGridView.DataSource = bs;
             bindingNavigator1.BindingSource = bs;
             countryComboBox.DataSource = dt2;
             countryComboBox.DisplayMember = "countryName";
@@ -73,7 +74,16 @@ namespace OODProject
 
             try
             {
+
                 cmd.ExecuteNonQuery();
+                cmd.CommandText = "SELECT * FROM [dbo].[Flight] where 1=1 ";
+                DataTable dt = new DataTable();
+                sda = new SqlDataAdapter(cmd);
+                BindingSource bs = new BindingSource();
+                sda.Fill(dt);
+                bs.DataSource = dt;
+                flightsGridView.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
                 cmd.Dispose();
                 con.Close();
                 MessageBox.Show("Success");
@@ -103,35 +113,28 @@ namespace OODProject
             BindingSource bs = new BindingSource();
             sda.Fill(dt);
             bs.DataSource = dt;
-            flightsGridView1.DataSource = bs;
+            flightsGridView.DataSource = bs;
             bindingNavigator1.BindingSource = bs;
             con.Close();
         }
 
-        private void flightsGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            countryID = Convert.ToInt32(flightsGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
-            rowID = Convert.ToInt32(flightsGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            airlineNameTextBox.Text = flightsGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            arrivalDateTimePicker.Value = DateTime.Parse(flightsGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
-            capacityTextBox.Text = flightsGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            departureDateTimePicker.Value = DateTime.Parse(flightsGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
-            priceTextBox.Text = flightsGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-            countryComboBox.SelectedValue = countryID;
-        }
-
         private void flightsGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (flightsGridView1.Rows[e.RowIndex].Cells[0].Value != DBNull.Value)
+            if (flightsGridView.Rows[e.RowIndex].Cells[0].Value != DBNull.Value)
             {
-                rowID = Convert.ToInt32(flightsGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                airlineNameTextBox.Text = flightsGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                arrivalDateTimePicker.Value = DateTime.Parse(flightsGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
-                capacityTextBox.Text = flightsGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                departureDateTimePicker.Value = DateTime.Parse(flightsGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
-                priceTextBox.Text = flightsGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                countryComboBox.SelectedValue = Convert.ToInt32(flightsGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                rowID = Convert.ToInt32(flightsGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                airlineNameTextBox.Text = flightsGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                arrivalDateTimePicker.Value = DateTime.Parse(flightsGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
+                capacityTextBox.Text = flightsGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                departureDateTimePicker.Value = DateTime.Parse(flightsGridView.Rows[e.RowIndex].Cells[4].Value.ToString());
+                priceTextBox.Text = flightsGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                countryComboBox.SelectedValue = Convert.ToInt32(flightsGridView.Rows[e.RowIndex].Cells[5].Value.ToString());
             }
+        }
+           
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
 
         private void updateFlightsBtn_Click(object sender, EventArgs e)
@@ -153,6 +156,15 @@ namespace OODProject
             {
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM [dbo].[Flight] where 1=1 ";
+                DataTable dt = new DataTable();
+                sda = new SqlDataAdapter(cmd);
+                BindingSource bs = new BindingSource();
+                sda.Fill(dt);
+                bs.DataSource = dt;
+                flightsGridView.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
                 con.Close();
                 MessageBox.Show("Success");
 
@@ -168,7 +180,7 @@ namespace OODProject
             }
         }
 
-        private void clearTxtBtn_Click(object sender, EventArgs e)
+        private void clearBtn_Click(object sender, EventArgs e)
         {
             airlineNameTextBox.Text = "";
             arrivalDateTimePicker.Value = DateTime.Now;
@@ -191,6 +203,15 @@ namespace OODProject
             {
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM [dbo].[Flight] where 1=1 ";
+                DataTable dt = new DataTable();
+                sda = new SqlDataAdapter(cmd);
+                BindingSource bs = new BindingSource();
+                sda.Fill(dt);
+                bs.DataSource = dt;
+                flightsGridView.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
                 con.Close();
                 MessageBox.Show("Success");
 
@@ -206,11 +227,16 @@ namespace OODProject
             }
         }
 
-        private void backBtn_Click(object sender, EventArgs e)
+        private void flightsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.Hide();
-            AdminMain admin = new AdminMain();
-            admin.Show();
+            countryID = Convert.ToInt32(flightsGridView.Rows[e.RowIndex].Cells[5].Value.ToString());
+            rowID = Convert.ToInt32(flightsGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            airlineNameTextBox.Text = flightsGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            arrivalDateTimePicker.Value = DateTime.Parse(flightsGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
+            capacityTextBox.Text = flightsGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            departureDateTimePicker.Value = DateTime.Parse(flightsGridView.Rows[e.RowIndex].Cells[4].Value.ToString());
+            priceTextBox.Text = flightsGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+            countryComboBox.SelectedValue = countryID;
         }
     }
 }

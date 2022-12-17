@@ -1,7 +1,7 @@
 ﻿
 namespace OODProject
 {
-    partial class ManageBooking
+    partial class manageBooking
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace OODProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBooking));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(manageBooking));
             this.backBtn = new System.Windows.Forms.Button();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.userTextBox = new System.Windows.Forms.TextBox();
@@ -39,7 +39,7 @@ namespace OODProject
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.manageGrid = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.seatTextBox = new System.Windows.Forms.TextBox();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -55,7 +55,9 @@ namespace OODProject
             this.updateBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.clearBtn = new System.Windows.Forms.Button();
+            this.refreshBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.manageGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -63,10 +65,10 @@ namespace OODProject
             // backBtn
             // 
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.Location = new System.Drawing.Point(11, 40);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.backBtn.Location = new System.Drawing.Point(32, 29);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(89, 29);
+            this.backBtn.Size = new System.Drawing.Size(119, 36);
             this.backBtn.TabIndex = 26;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
@@ -74,37 +76,36 @@ namespace OODProject
             // 
             // datePicker
             // 
-            this.datePicker.Location = new System.Drawing.Point(129, 359);
-            this.datePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.datePicker.Location = new System.Drawing.Point(172, 442);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(172, 20);
+            this.datePicker.Size = new System.Drawing.Size(228, 22);
             this.datePicker.TabIndex = 24;
             this.datePicker.Value = new System.DateTime(2022, 12, 15, 0, 0, 0, 0);
             // 
             // userTextBox
             // 
-            this.userTextBox.Location = new System.Drawing.Point(438, 359);
-            this.userTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.userTextBox.Location = new System.Drawing.Point(584, 442);
+            this.userTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userTextBox.Name = "userTextBox";
-            this.userTextBox.Size = new System.Drawing.Size(102, 20);
+            this.userTextBox.Size = new System.Drawing.Size(135, 22);
             this.userTextBox.TabIndex = 23;
             // 
             // flightTextBox
             // 
-            this.flightTextBox.Location = new System.Drawing.Point(317, 359);
-            this.flightTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.flightTextBox.Location = new System.Drawing.Point(423, 442);
+            this.flightTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flightTextBox.Name = "flightTextBox";
-            this.flightTextBox.Size = new System.Drawing.Size(104, 20);
+            this.flightTextBox.Size = new System.Drawing.Size(137, 22);
             this.flightTextBox.TabIndex = 22;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(459, 327);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(612, 402);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 20);
+            this.label5.Size = new System.Drawing.Size(77, 25);
             this.label5.TabIndex = 19;
             this.label5.Text = "User ID";
             // 
@@ -112,10 +113,9 @@ namespace OODProject
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(335, 327);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(447, 402);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 20);
+            this.label4.Size = new System.Drawing.Size(83, 25);
             this.label4.TabIndex = 18;
             this.label4.Text = "Flight ID";
             // 
@@ -123,10 +123,9 @@ namespace OODProject
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(160, 327);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(213, 402);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 20);
+            this.label3.Size = new System.Drawing.Size(129, 25);
             this.label3.TabIndex = 17;
             this.label3.Text = "Booking Date";
             // 
@@ -134,41 +133,39 @@ namespace OODProject
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 327);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(15, 402);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 20);
+            this.label2.Size = new System.Drawing.Size(127, 25);
             this.label2.TabIndex = 16;
             this.label2.Text = "Seat Number";
             // 
-            // dataGridView1
+            // manageGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 93);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(562, 216);
-            this.dataGridView1.TabIndex = 15;
+            this.manageGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.manageGrid.Location = new System.Drawing.Point(20, 123);
+            this.manageGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manageGrid.Name = "manageGrid";
+            this.manageGrid.RowHeadersWidth = 51;
+            this.manageGrid.RowTemplate.Height = 24;
+            this.manageGrid.Size = new System.Drawing.Size(749, 266);
+            this.manageGrid.TabIndex = 15;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(170, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(227, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 33);
+            this.label1.Size = new System.Drawing.Size(319, 42);
             this.label1.TabIndex = 14;
             this.label1.Text = "Manage Bookings";
             // 
             // seatTextBox
             // 
-            this.seatTextBox.Location = new System.Drawing.Point(11, 359);
-            this.seatTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.seatTextBox.Location = new System.Drawing.Point(15, 442);
+            this.seatTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.seatTextBox.Name = "seatTextBox";
-            this.seatTextBox.Size = new System.Drawing.Size(103, 20);
+            this.seatTextBox.Size = new System.Drawing.Size(136, 22);
             this.seatTextBox.TabIndex = 21;
             // 
             // bindingNavigator1
@@ -194,14 +191,14 @@ namespace OODProject
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(587, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(783, 27);
             this.bindingNavigator1.TabIndex = 27;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -211,7 +208,7 @@ namespace OODProject
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -220,7 +217,7 @@ namespace OODProject
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
@@ -234,7 +231,7 @@ namespace OODProject
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(49, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -249,7 +246,7 @@ namespace OODProject
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -258,7 +255,7 @@ namespace OODProject
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
@@ -269,10 +266,10 @@ namespace OODProject
             // updateBtn
             // 
             this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.Location = new System.Drawing.Point(301, 397);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.updateBtn.Location = new System.Drawing.Point(401, 489);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(120, 30);
+            this.updateBtn.Size = new System.Drawing.Size(160, 37);
             this.updateBtn.TabIndex = 30;
             this.updateBtn.Text = "Update Booking";
             this.updateBtn.UseVisualStyleBackColor = true;
@@ -280,10 +277,10 @@ namespace OODProject
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.Location = new System.Drawing.Point(156, 397);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteBtn.Location = new System.Drawing.Point(208, 489);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(120, 30);
+            this.deleteBtn.Size = new System.Drawing.Size(160, 37);
             this.deleteBtn.TabIndex = 29;
             this.deleteBtn.Text = "Delete Booking";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -291,19 +288,44 @@ namespace OODProject
             // addBtn
             // 
             this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Location = new System.Drawing.Point(11, 397);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addBtn.Location = new System.Drawing.Point(15, 489);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(120, 30);
+            this.addBtn.Size = new System.Drawing.Size(160, 37);
             this.addBtn.TabIndex = 28;
             this.addBtn.Text = "Add Booking";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // ManageBooking
+            // clearBtn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.clearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn.Location = new System.Drawing.Point(584, 491);
+            this.clearBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(135, 33);
+            this.clearBtn.TabIndex = 32;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.Location = new System.Drawing.Point(32, 77);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(119, 33);
+            this.refreshBtn.TabIndex = 31;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            // 
+            // manageBooking
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 442);
+            this.ClientSize = new System.Drawing.Size(783, 544);
+            this.Controls.Add(this.clearBtn);
+            this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addBtn);
@@ -317,12 +339,13 @@ namespace OODProject
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.manageGrid);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ManageBooking";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "manageBooking";
             this.Text = "Manage Booking";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.manageBooking_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.manageGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -341,7 +364,7 @@ namespace OODProject
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView manageGrid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox seatTextBox;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
@@ -357,5 +380,7 @@ namespace OODProject
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button clearBtn;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }

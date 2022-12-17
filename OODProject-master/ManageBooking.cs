@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace OODProject
 {
-    public partial class ManageBooking : Form
+   
+    public partial class manageBooking : Form
     {
-        public ManageBooking()
+        
+        public manageBooking()
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -21,6 +24,16 @@ namespace OODProject
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void manageBooking_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }

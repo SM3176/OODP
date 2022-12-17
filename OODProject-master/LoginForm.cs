@@ -21,7 +21,7 @@ namespace OODProject
         }
 
         
-        SqlConnection conn= new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OODP\OODProject-master\Database.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn= new SqlConnection(Program.conn);
         
         
 
@@ -66,6 +66,10 @@ namespace OODProject
                             Employer.Show();
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Wrong user or password");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -84,17 +88,16 @@ namespace OODProject
             
 
         }
+        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            passwordTextBox.UseSystemPasswordChar = true;
+        }
 
         private void registerButton_Click(object sender, EventArgs e)
         {
             RegisterForm register = new RegisterForm();
             register.Show();
-            this.Close();
-        }
-
-        private void passwordTextBox_TextChanged(object sender, EventArgs e)
-        {
-            passwordTextBox.UseSystemPasswordChar = true;
+            this.Hide();
         }
     }
 }

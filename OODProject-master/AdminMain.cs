@@ -52,7 +52,7 @@ namespace OODProject
         private void ManageBookings_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ManageBooking book = new ManageBooking();
+            manageBooking book = new manageBooking();
             book.ShowDialog();
             this.Show();
         }
