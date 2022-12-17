@@ -137,7 +137,6 @@ namespace OODProject
             this.manageGrid.RowTemplate.Height = 24;
             this.manageGrid.Size = new System.Drawing.Size(562, 233);
             this.manageGrid.TabIndex = 15;
-            this.manageGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.manageGrid_CellContentClick);
             this.manageGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.manageGrid_CellMouseClick);
             // 
             // label1

@@ -60,6 +60,7 @@ namespace OODProject
             this.bFlights.TabIndex = 0;
             this.bFlights.Text = "Book Flights";
             this.bFlights.UseVisualStyleBackColor = true;
+            this.bFlights.Click += new System.EventHandler(this.bFlights_Click);
             // 
             // dataGridView1
             // 

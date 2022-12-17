@@ -55,7 +55,7 @@ namespace OODProject
             // bkFlight
             // 
             this.bkFlight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bkFlight.Location = new System.Drawing.Point(646, 428);
+            this.bkFlight.Location = new System.Drawing.Point(296, 428);
             this.bkFlight.Name = "bkFlight";
             this.bkFlight.Size = new System.Drawing.Size(123, 32);
             this.bkFlight.TabIndex = 0;
@@ -71,6 +71,7 @@ namespace OODProject
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(760, 335);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // bindingNavigator1
             // 
@@ -192,7 +193,7 @@ namespace OODProject
             // vBooking
             // 
             this.vBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vBooking.Location = new System.Drawing.Point(334, 428);
+            this.vBooking.Location = new System.Drawing.Point(153, 429);
             this.vBooking.Name = "vBooking";
             this.vBooking.Size = new System.Drawing.Size(137, 32);
             this.vBooking.TabIndex = 9;
@@ -225,6 +226,7 @@ namespace OODProject
             this.Controls.Add(this.bkFlight);
             this.Name = "EmployerMain";
             this.Text = "Employer Main Menu";
+            this.Load += new System.EventHandler(this.EmployerMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
