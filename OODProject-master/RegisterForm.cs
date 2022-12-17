@@ -31,7 +31,7 @@ namespace OODProject
         private void registerButton_Click(object sender, EventArgs e)
         {
            
-            SqlConnection conn = new SqlConnection();
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OODP\OODProject-master\Database.mdf;Integrated Security=True;Connect Timeout=30");
             
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
@@ -76,11 +76,6 @@ namespace OODProject
         private void passwordTextField_TextChanged(object sender, EventArgs e)
         {
             passwordTextField.UseSystemPasswordChar = true;
-
-        }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
 
         }
     }

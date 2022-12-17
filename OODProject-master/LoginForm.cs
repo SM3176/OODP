@@ -21,7 +21,7 @@ namespace OODProject
         }
 
         
-        SqlConnection conn= new SqlConnection(Properties.Settings.Default.con);
+        SqlConnection conn= new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OODP\OODProject-master\Database.mdf;Integrated Security=True;Connect Timeout=30");
         
         
 
@@ -95,11 +95,6 @@ namespace OODProject
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
             passwordTextBox.UseSystemPasswordChar = true;
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
