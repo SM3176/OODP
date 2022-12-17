@@ -202,7 +202,7 @@ namespace OODProject
             cmd.CommandText = "UPDATE [dbo].[Booking] set seatNumber = @seat, bookingDate = @bDate, flightID = @flight, userID = @user where bookingID = @id";
             cmd.Parameters.AddWithValue("@seat", seatTextBox.Text);
             cmd.Parameters.AddWithValue("@bDate", date);
-            cmd.Parameters.AddWithValue("@flightID", flightCombo.SelectedValue );
+            cmd.Parameters.AddWithValue("@flightID", flightCombo.SelectedValue);
             cmd.Parameters.AddWithValue("@userID", userCombo.SelectedValue);
             cmd.Parameters.AddWithValue("@id", rowID);
 
@@ -221,8 +221,6 @@ namespace OODProject
                 bindingNavigator1.BindingSource = bs;
                 con.Close();
                 MessageBox.Show("Success");
-
-            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
@@ -232,6 +230,17 @@ namespace OODProject
                 if (con.State == ConnectionState.Open)
                     con.Close();
             }
+        }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            
         }
 
         private void manageGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
