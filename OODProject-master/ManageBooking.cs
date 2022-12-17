@@ -75,7 +75,6 @@ namespace OODProject
             flightCombo.DataSource = dt2;
             flightCombo.DisplayMember = "flightName";
             flightCombo.ValueMember = "flightID";
-
             userCombo.DataSource = dt3;
             userCombo.DisplayMember = "userName";
             userCombo.ValueMember = "userID";
