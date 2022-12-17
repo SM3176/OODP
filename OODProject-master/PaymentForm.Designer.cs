@@ -131,6 +131,7 @@ namespace OODProject
             this.submitBtn.TabIndex = 9;
             this.submitBtn.Text = "Submit";
             this.submitBtn.UseVisualStyleBackColor = true;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
             // backBtn
             // 

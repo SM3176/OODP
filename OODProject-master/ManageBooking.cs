@@ -221,6 +221,7 @@ namespace OODProject
                 bindingNavigator1.BindingSource = bs;
                 con.Close();
                 MessageBox.Show("Success");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
@@ -230,16 +231,7 @@ namespace OODProject
                 if (con.State == ConnectionState.Open)
                     con.Close();
             }
-        }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open)
-                    con.Close();
-            }
+
             
         }
 
