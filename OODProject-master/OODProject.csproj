@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -74,6 +74,12 @@
     </Compile>
     <Compile Include="EmployerMain.Designer.cs">
       <DependentUpon>EmployerMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpUserToBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpUserToBook.Designer.cs">
+      <DependentUpon>EmpUserToBook.cs</DependentUpon>
     </Compile>
     <Compile Include="Manage Flights.cs">
       <SubType>Form</SubType>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployerMain.resx">
       <DependentUpon>EmployerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpUserToBook.resx">
+      <DependentUpon>EmpUserToBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage Flights.resx">
       <DependentUpon>Manage Flights.cs</DependentUpon>

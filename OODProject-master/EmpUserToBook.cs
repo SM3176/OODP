@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace OODProject
+{
+    public partial class EmpUserBooking : Form
+    {
+        SqlConnection con = new SqlConnection(Program.conn);
+        DataTable dt;
+        SqlDataAdapter sda;
+        SqlCommand cmd;
+
+        public EmpUserBooking()
+        {
+            InitializeComponent();
+        }
+
+        private void EmpUserBooking_Load(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT userID, userName FROM [dbo].[User] where roleID = 2";
+
+            DataTable dt = new DataTable();
+            sda = new SqlDataAdapter(cmd);
+            BindingSource bs = new BindingSource();
+            sda.Fill(dt);
+            bs.DataSource = dt;
+            dataGridView1.DataSource = bs;
+            bindingNavigator1.BindingSource = bs;
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void checkOutBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PaymentForm payForm = new PaymentForm();
+            payForm.ShowDialog();
+            this.Show();
+        }
+    }
+}

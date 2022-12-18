@@ -63,6 +63,7 @@ namespace OODProject
             this.updateBtn.TabIndex = 44;
             this.updateBtn.Text = "Update Message";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // deleteBtn
             // 
@@ -74,6 +75,7 @@ namespace OODProject
             this.deleteBtn.TabIndex = 43;
             this.deleteBtn.Text = "Delete Message";
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // addBtn
             // 
@@ -85,6 +87,7 @@ namespace OODProject
             this.addBtn.TabIndex = 42;
             this.addBtn.Text = "Add Message";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // backBtn
             // 
@@ -138,6 +141,8 @@ namespace OODProject
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(298, 301);
             this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // descTextBox
             // 
@@ -166,6 +171,7 @@ namespace OODProject
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Messages";
             this.Text = "Messages";
+            this.Load += new System.EventHandler(this.Messages_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

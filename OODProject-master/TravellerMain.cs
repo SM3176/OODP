@@ -32,5 +32,10 @@ namespace OODProject
             mess.ShowDialog();
             this.Show();
         }
+
+        private void bFlights_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
