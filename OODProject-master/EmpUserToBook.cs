@@ -18,6 +18,9 @@ namespace OODProject
         SqlDataAdapter sda;
         SqlCommand cmd;
 
+
+        public static DataTable userSubset = new DataTable();
+
         public EmpUserBooking()
         {
             InitializeComponent();
@@ -25,6 +28,10 @@ namespace OODProject
 
         private void EmpUserBooking_Load(object sender, EventArgs e)
         {
+            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            checkBoxColumn.HeaderText = "Select";
+            checkBoxColumn.Name = "isSelected";
+
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
@@ -38,6 +45,8 @@ namespace OODProject
             bs.DataSource = dt;
             dataGridView1.DataSource = bs;
             bindingNavigator1.BindingSource = bs;
+
+            dataGridView1.Columns.Add(checkBoxColumn);
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -47,9 +56,67 @@ namespace OODProject
 
         private void checkOutBtn_Click(object sender, EventArgs e)
         {
+            userSubset = new DataTable();
+
+            userSubset.Columns.Add("userID", typeof(string));
+            userSubset.Columns.Add("userName", typeof(string));
+
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                if (Convert.ToBoolean(item.Cells[2].Value))
+                {
+                    userSubset.Rows.Add(item.Cells[0].Value.ToString(), item.Cells[1].Value.ToString());
+                }
+            }
+            if (userSubset.Rows.Count > 0)
+            {
+                this.Hide();
+                PaymentForm payForm = new PaymentForm();
+                payForm.ShowDialog();
+                this.Show();
+            }
+
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            checkBoxColumn.HeaderText = "Select";
+            checkBoxColumn.Name = "isSelected";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT userID, userName FROM [dbo].[User] where roleID = 2";
+
+            DataTable dt = new DataTable();
+            sda = new SqlDataAdapter(cmd);
+            BindingSource bs = new BindingSource();
+            sda.Fill(dt);
+            bs.DataSource = dt;
+            dataGridView1.DataSource = bs;
+            bindingNavigator1.BindingSource = bs;
+
+            dataGridView1.Columns.Add(checkBoxColumn);
+        }
+
+        private void previewBtn_Click_1(object sender, EventArgs e)
+        {
+            userSubset = new DataTable();
+
+            userSubset.Columns.Add("userID", typeof(string));
+            userSubset.Columns.Add("userName", typeof(string));
+
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                if (Convert.ToBoolean(item.Cells[2].Value))
+                {
+                    userSubset.Rows.Add(item.Cells[0].Value.ToString(), item.Cells[1].Value.ToString());
+                }
+            }
             this.Hide();
-            PaymentForm payForm = new PaymentForm();
-            payForm.ShowDialog();
+            EmpPreviewUsers preview = new EmpPreviewUsers();
+            preview.ShowDialog();
             this.Show();
         }
     }

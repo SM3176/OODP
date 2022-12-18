@@ -44,6 +44,7 @@ namespace OODProject
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.checkOutBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.previewBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -109,7 +110,6 @@ namespace OODProject
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -171,11 +171,22 @@ namespace OODProject
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // previewBtn
+            // 
+            this.previewBtn.Location = new System.Drawing.Point(132, 406);
+            this.previewBtn.Name = "previewBtn";
+            this.previewBtn.Size = new System.Drawing.Size(114, 32);
+            this.previewBtn.TabIndex = 4;
+            this.previewBtn.Text = "Preview Users";
+            this.previewBtn.UseVisualStyleBackColor = true;
+            this.previewBtn.Click += new System.EventHandler(this.previewBtn_Click_1);
+            // 
             // EmpUserBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.previewBtn);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.checkOutBtn);
             this.Controls.Add(this.dataGridView1);
@@ -207,5 +218,6 @@ namespace OODProject
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button checkOutBtn;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button previewBtn;
     }
 }

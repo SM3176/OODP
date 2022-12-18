@@ -37,16 +37,20 @@ namespace OODProject
             ViewMessages mess = new ViewMessages();
             mess.ShowDialog();
             this.Show();
-            
+
         }
 
         private void vFlight_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            viewFlighDetails vF = new viewFlighDetails();
-            vF.ShowDialog();
-            this.Show();
-            
+            if (selectedRow != null)
+            {
+                this.Hide();
+                viewFlighDetails vF = new viewFlighDetails();
+                vF.ShowDialog();
+                this.Show();
+            }
+
+
         }
 
         private void vBooking_Click(object sender, EventArgs e)
@@ -65,11 +69,13 @@ namespace OODProject
 
         private void bkFlight_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            EmpUserBooking userBooking = new EmpUserBooking();
-            userBooking.ShowDialog();
-            this.Show();
-            
+            if (selectedRow != null)
+            {
+                this.Hide();
+                EmpUserBooking userBooking = new EmpUserBooking();
+                userBooking.ShowDialog();
+                this.Show();
+            }
         }
 
         private void logOutBtn_Click(object sender, EventArgs e)
@@ -99,7 +105,7 @@ namespace OODProject
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-                selectedRow = dataGridView1.Rows[e.RowIndex];
+            selectedRow = dataGridView1.Rows[e.RowIndex];
         }
     }
 }
