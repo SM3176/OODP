@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace OODProject
 {
     public partial class AdminMain : Form
     {
+        SqlConnection con = new SqlConnection(Program.conn);
+        SqlCommand backupcomm = new SqlCommand();
         public AdminMain()
         {
             InitializeComponent();
@@ -71,6 +74,22 @@ namespace OODProject
             DCMC dc = new DCMC();
             dc.ShowDialog();
             this.Show();
+        }
+
+        private void backupDB_Click(object sender, EventArgs e)
+        {
+            String databaseLocation = @"D:\OODP\OODProject-master\Flight.mdf";
+            String backup = @"D:\backup";
+            try
+            {
+                System.IO.File.Copy(databaseLocation, System.IO.Path.Combine(backup, "Flight.mdf"), true);
+                MessageBox.Show("Success");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

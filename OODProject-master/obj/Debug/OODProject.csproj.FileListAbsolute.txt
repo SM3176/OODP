@@ -57,8 +57,6 @@ C:\Users\User\Source\Repos\SM3176\OODP\OODProject-master\obj\Debug\OODProject.cs
 C:\Users\User\Source\Repos\SM3176\OODP\OODProject-master\obj\Debug\OODProject.csproj.CoreCompileInputs.cache
 C:\Users\User\Source\Repos\SM3176\OODP\OODProject-master\obj\Debug\OODProject.exe
 C:\Users\User\Source\Repos\SM3176\OODP\OODProject-master\obj\Debug\OODProject.pdb
-D:\OODP\OODProject-master\bin\Debug\Database.mdf
-D:\OODP\OODProject-master\bin\Debug\Database_log.ldf
 D:\OODP\OODProject-master\bin\Debug\OODProject.exe.config
 D:\OODP\OODProject-master\bin\Debug\OODProject.exe
 D:\OODP\OODProject-master\bin\Debug\OODProject.pdb
@@ -148,3 +146,6 @@ C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\bin\Debug\OODProject.exe.c
 C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\bin\Debug\OODProject.exe
 C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\bin\Debug\OODProject.pdb
 C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\obj\Debug\OODProject.EmpPreviewUsers.resources
+D:\OODP\OODProject-master\obj\Debug\OODProject.EmpPreviewUsers.resources
+D:\OODP\OODProject-master\bin\Debug\Flight.mdf
+D:\OODP\OODProject-master\bin\Debug\Flight_log.ldf

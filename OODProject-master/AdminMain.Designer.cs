@@ -49,9 +49,10 @@ namespace OODProject
             // manageServices
             // 
             this.manageServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageServices.Location = new System.Drawing.Point(213, 108);
+            this.manageServices.Location = new System.Drawing.Point(284, 133);
+            this.manageServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manageServices.Name = "manageServices";
-            this.manageServices.Size = new System.Drawing.Size(400, 36);
+            this.manageServices.Size = new System.Drawing.Size(533, 44);
             this.manageServices.TabIndex = 0;
             this.manageServices.Text = "Manage Services";
             this.manageServices.UseVisualStyleBackColor = true;
@@ -60,9 +61,10 @@ namespace OODProject
             // manageUsers
             // 
             this.manageUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageUsers.Location = new System.Drawing.Point(213, 177);
+            this.manageUsers.Location = new System.Drawing.Point(284, 218);
+            this.manageUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manageUsers.Name = "manageUsers";
-            this.manageUsers.Size = new System.Drawing.Size(400, 36);
+            this.manageUsers.Size = new System.Drawing.Size(533, 44);
             this.manageUsers.TabIndex = 1;
             this.manageUsers.Text = "Manage Users";
             this.manageUsers.UseVisualStyleBackColor = true;
@@ -71,9 +73,10 @@ namespace OODProject
             // ManageBookings
             // 
             this.ManageBookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageBookings.Location = new System.Drawing.Point(213, 246);
+            this.ManageBookings.Location = new System.Drawing.Point(284, 303);
+            this.ManageBookings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ManageBookings.Name = "ManageBookings";
-            this.ManageBookings.Size = new System.Drawing.Size(400, 36);
+            this.ManageBookings.Size = new System.Drawing.Size(533, 44);
             this.ManageBookings.TabIndex = 2;
             this.ManageBookings.Text = "Manage Bookings";
             this.ManageBookings.UseVisualStyleBackColor = true;
@@ -82,9 +85,10 @@ namespace OODProject
             // ManageFlights
             // 
             this.ManageFlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageFlights.Location = new System.Drawing.Point(213, 315);
+            this.ManageFlights.Location = new System.Drawing.Point(284, 388);
+            this.ManageFlights.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ManageFlights.Name = "ManageFlights";
-            this.ManageFlights.Size = new System.Drawing.Size(400, 36);
+            this.ManageFlights.Size = new System.Drawing.Size(533, 44);
             this.ManageFlights.TabIndex = 3;
             this.ManageFlights.Text = "Manage Flights";
             this.ManageFlights.UseVisualStyleBackColor = true;
@@ -93,9 +97,10 @@ namespace OODProject
             // dcmc
             // 
             this.dcmc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dcmc.Location = new System.Drawing.Point(213, 384);
+            this.dcmc.Location = new System.Drawing.Point(284, 473);
+            this.dcmc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dcmc.Name = "dcmc";
-            this.dcmc.Size = new System.Drawing.Size(400, 36);
+            this.dcmc.Size = new System.Drawing.Size(533, 44);
             this.dcmc.TabIndex = 5;
             this.dcmc.Text = "DCMC";
             this.dcmc.UseVisualStyleBackColor = true;
@@ -104,9 +109,10 @@ namespace OODProject
             // messages
             // 
             this.messages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messages.Location = new System.Drawing.Point(599, 12);
+            this.messages.Location = new System.Drawing.Point(799, 15);
+            this.messages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.messages.Name = "messages";
-            this.messages.Size = new System.Drawing.Size(121, 33);
+            this.messages.Size = new System.Drawing.Size(161, 41);
             this.messages.TabIndex = 6;
             this.messages.Text = "Messages";
             this.messages.UseVisualStyleBackColor = true;
@@ -115,20 +121,23 @@ namespace OODProject
             // backupDB
             // 
             this.backupDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backupDB.Location = new System.Drawing.Point(569, 440);
+            this.backupDB.Location = new System.Drawing.Point(759, 542);
+            this.backupDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backupDB.Name = "backupDB";
-            this.backupDB.Size = new System.Drawing.Size(151, 29);
+            this.backupDB.Size = new System.Drawing.Size(201, 36);
             this.backupDB.TabIndex = 7;
             this.backupDB.Text = "Database Backup";
             this.backupDB.UseVisualStyleBackColor = true;
+            this.backupDB.Click += new System.EventHandler(this.backupDB_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 116);
+            this.label1.Location = new System.Drawing.Point(39, 143);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 20);
+            this.label1.Size = new System.Drawing.Size(165, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Manage Services";
             // 
@@ -136,9 +145,10 @@ namespace OODProject
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 185);
+            this.label2.Location = new System.Drawing.Point(39, 228);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 20);
+            this.label2.Size = new System.Drawing.Size(140, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Manage Users";
             // 
@@ -146,9 +156,10 @@ namespace OODProject
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 254);
+            this.label3.Location = new System.Drawing.Point(39, 313);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 20);
+            this.label3.Size = new System.Drawing.Size(170, 25);
             this.label3.TabIndex = 11;
             this.label3.Text = "Manage Bookings";
             // 
@@ -156,9 +167,10 @@ namespace OODProject
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 323);
+            this.label4.Location = new System.Drawing.Point(39, 398);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 20);
+            this.label4.Size = new System.Drawing.Size(146, 25);
             this.label4.TabIndex = 12;
             this.label4.Text = "Manage Flights";
             // 
@@ -166,9 +178,10 @@ namespace OODProject
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(275, 45);
+            this.label5.Location = new System.Drawing.Point(367, 55);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(185, 33);
+            this.label5.Size = new System.Drawing.Size(229, 42);
             this.label5.TabIndex = 13;
             this.label5.Text = "Admin Form";
             // 
@@ -176,18 +189,20 @@ namespace OODProject
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 392);
+            this.label6.Location = new System.Drawing.Point(39, 482);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 20);
+            this.label6.Size = new System.Drawing.Size(196, 25);
             this.label6.TabIndex = 14;
             this.label6.Text = "Manage Destinations";
             // 
             // logOut
             // 
             this.logOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOut.Location = new System.Drawing.Point(13, 13);
+            this.logOut.Location = new System.Drawing.Point(17, 16);
+            this.logOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.logOut.Name = "logOut";
-            this.logOut.Size = new System.Drawing.Size(95, 32);
+            this.logOut.Size = new System.Drawing.Size(127, 39);
             this.logOut.TabIndex = 15;
             this.logOut.Text = "Log Out";
             this.logOut.UseVisualStyleBackColor = true;
@@ -195,9 +210,9 @@ namespace OODProject
             // 
             // AdminMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 481);
+            this.ClientSize = new System.Drawing.Size(979, 592);
             this.Controls.Add(this.logOut);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -212,6 +227,7 @@ namespace OODProject
             this.Controls.Add(this.ManageBookings);
             this.Controls.Add(this.manageUsers);
             this.Controls.Add(this.manageServices);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminMain";
             this.Text = "Admind Form";
             this.ResumeLayout(false);
