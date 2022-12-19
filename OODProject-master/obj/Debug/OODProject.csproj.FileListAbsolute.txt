@@ -1,5 +1,3 @@
-D:\OODP\OODP\OODProject-master\bin\Debug\Database.mdf
-D:\OODP\OODP\OODProject-master\bin\Debug\Database_log.ldf
 D:\OODP\OODP\OODProject-master\bin\Debug\OODProject.exe.config
 D:\OODP\OODP\OODProject-master\bin\Debug\OODProject.exe
 D:\OODP\OODP\OODProject-master\bin\Debug\OODProject.pdb
@@ -149,3 +147,7 @@ D:\OODP\OODProject-master\bin\Debug\Flight.mdf
 D:\OODP\OODProject-master\bin\Debug\Flight_log.ldf
 C:\Users\97337\source\repos\OODPPPP\OODProject-master\bin\Debug\Flight.mdf
 C:\Users\97337\source\repos\OODPPPP\OODProject-master\bin\Debug\Flight_log.ldf
+D:\oodp\OODP\OODProject-master\bin\Debug\Flight.mdf
+D:\oodp\OODP\OODProject-master\bin\Debug\Flight_log.ldf
+D:\oodp\OODP\OODProject-master\obj\Debug\OODProject.EmpUserBooking.resources
+D:\oodp\OODP\OODProject-master\obj\Debug\OODProject.EmpPreviewUsers.resources

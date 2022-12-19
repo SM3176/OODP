@@ -9,7 +9,7 @@ namespace OODProject
     static class Program
     {
 
-        public static string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\97337\source\repos\OODPPPP\OODProject-master\Flight.mdf;Integrated Security=True;Connect Timeout=30";
+        public static string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\oodp\OODP\OODProject-master\Flight.mdf;Integrated Security=True;Connect Timeout=30";
         
         /// <summary>
         /// The main entry point for the application.

@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Diagnostics;
 
 namespace OODProject
 {
     public partial class AdminMain : Form
     {
         SqlConnection con = new SqlConnection(Program.conn);
-        SqlCommand backupcomm = new SqlCommand();
+        
+        
         public AdminMain()
         {
             InitializeComponent();
@@ -78,17 +81,55 @@ namespace OODProject
 
         private void backupDB_Click(object sender, EventArgs e)
         {
-            String databaseLocation = @"D:\OODP\OODProject-master\Flight.mdf";
+            String databaseLocation = @"D:\oodp\OODP\OODProject-master\Flight.mdf";
             String backup = @"D:\backup";
+            String there = @"D:\backup\Flight.mdf";
             try
             {
-                System.IO.File.Copy(databaseLocation, System.IO.Path.Combine(backup, "Flight.mdf"), true);
-                MessageBox.Show("Success");
+            
+                if (!Directory.Exists(backup))
+                {
+                    
+                    // Try to create the directory.
+                    DirectoryInfo di = Directory.CreateDirectory(backup);
+                    foreach (var process in Process.GetProcessesByName("sqlservr"))
+                    {
+                        process.Kill();
+                    }
+                    System.IO.File.Copy(databaseLocation, System.IO.Path.Combine(backup, "Flight.mdf"), true);
+                    MessageBox.Show("Success");
+                    System.IO.File.Copy(databaseLocation, System.IO.Path.Combine(backup, "Flight.mdf"), true);
+                    MessageBox.Show("Success");
+                }
+                else
+                {
+                    if (File.Exists(there))
+                    {
+                        File.Delete(there);
+                        foreach (var process in Process.GetProcessesByName("sqlservr"))
+                        {
+                            process.Kill();
+                        }
+                        System.IO.File.Copy(databaseLocation, System.IO.Path.Combine(backup, "Flight.mdf"), true);
+                        MessageBox.Show("Success");
+                    }
+                    else
+                    {
+                        foreach (var process in Process.GetProcessesByName("sqlservr"))
+                        {
+                            process.Kill();
+                        }
+                        System.IO.File.Copy(databaseLocation, System.IO.Path.Combine(backup, "Flight.mdf"), true);
+                        MessageBox.Show("Success");
+                    }
+                    
+                }
+                
             }
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Click one more time on the database back up to confirm ");
             }
         }
     }
