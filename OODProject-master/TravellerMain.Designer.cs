@@ -31,10 +31,7 @@ namespace OODProject
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TravellerMain));
-            this.bFlights = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.messages = new System.Windows.Forms.Button();
-            this.vBookingD = new System.Windows.Forms.Button();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -46,51 +43,23 @@ namespace OODProject
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.logOutBtn = new System.Windows.Forms.Button();
+            this.vBookingD = new System.Windows.Forms.Button();
+            this.messages = new System.Windows.Forms.Button();
+            this.bFlights = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bFlights
-            // 
-            this.bFlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bFlights.Location = new System.Drawing.Point(309, 39);
-            this.bFlights.Name = "bFlights";
-            this.bFlights.Size = new System.Drawing.Size(131, 32);
-            this.bFlights.TabIndex = 0;
-            this.bFlights.Text = "Book Flights";
-            this.bFlights.UseVisualStyleBackColor = true;
-            this.bFlights.Click += new System.EventHandler(this.bFlights_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(760, 345);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // messages
-            // 
-            this.messages.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messages.Location = new System.Drawing.Point(611, 39);
-            this.messages.Name = "messages";
-            this.messages.Size = new System.Drawing.Size(160, 33);
-            this.messages.TabIndex = 8;
-            this.messages.Text = "View Messages ";
-            this.messages.UseVisualStyleBackColor = true;
-            this.messages.Click += new System.EventHandler(this.messages_Click);
-            // 
-            // vBookingD
-            // 
-            this.vBookingD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vBookingD.Location = new System.Drawing.Point(446, 39);
-            this.vBookingD.Name = "vBookingD";
-            this.vBookingD.Size = new System.Drawing.Size(159, 33);
-            this.vBookingD.TabIndex = 10;
-            this.vBookingD.Text = "View Booking Detials";
-            this.vBookingD.UseVisualStyleBackColor = true;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // bindingNavigator1
             // 
@@ -198,19 +167,52 @@ namespace OODProject
             this.logOutBtn.UseVisualStyleBackColor = true;
             this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
+            // vBookingD
+            // 
+            this.vBookingD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vBookingD.Location = new System.Drawing.Point(475, 431);
+            this.vBookingD.Name = "vBookingD";
+            this.vBookingD.Size = new System.Drawing.Size(159, 33);
+            this.vBookingD.TabIndex = 15;
+            this.vBookingD.Text = "View Booking Details";
+            this.vBookingD.UseVisualStyleBackColor = true;
+            this.vBookingD.Click += new System.EventHandler(this.vBookingD_Click);
+            // 
+            // messages
+            // 
+            this.messages.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messages.Location = new System.Drawing.Point(611, 30);
+            this.messages.Name = "messages";
+            this.messages.Size = new System.Drawing.Size(160, 33);
+            this.messages.TabIndex = 14;
+            this.messages.Text = "View Messages ";
+            this.messages.UseVisualStyleBackColor = true;
+            // 
+            // bFlights
+            // 
+            this.bFlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bFlights.Location = new System.Drawing.Point(640, 431);
+            this.bFlights.Name = "bFlights";
+            this.bFlights.Size = new System.Drawing.Size(131, 32);
+            this.bFlights.TabIndex = 13;
+            this.bFlights.Text = "Book Flights";
+            this.bFlights.UseVisualStyleBackColor = true;
+            this.bFlights.Click += new System.EventHandler(this.bFlights_Click);
+            // 
             // TravellerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 445);
-            this.Controls.Add(this.logOutBtn);
-            this.Controls.Add(this.bindingNavigator1);
+            this.ClientSize = new System.Drawing.Size(783, 475);
             this.Controls.Add(this.vBookingD);
             this.Controls.Add(this.messages);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bFlights);
+            this.Controls.Add(this.logOutBtn);
+            this.Controls.Add(this.bindingNavigator1);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "TravellerMain";
             this.Text = "Traveler Main Menu";
+            this.Load += new System.EventHandler(this.TravellerMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
@@ -221,11 +223,7 @@ namespace OODProject
         }
 
         #endregion
-
-        private System.Windows.Forms.Button bFlights;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button messages;
-        private System.Windows.Forms.Button vBookingD;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -237,5 +235,8 @@ namespace OODProject
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button logOutBtn;
+        private System.Windows.Forms.Button vBookingD;
+        private System.Windows.Forms.Button messages;
+        private System.Windows.Forms.Button bFlights;
     }
 }

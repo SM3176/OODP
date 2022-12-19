@@ -22,7 +22,8 @@ namespace OODProject
 
         
         SqlConnection conn= new SqlConnection(Program.conn);
-        public static string loggedInID;
+        
+        public static DataRow loggedInID;
         
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -50,21 +51,21 @@ namespace OODProject
                         if (dt.Rows[0].ItemArray[3].ToString() == "1")
                         {
                             AdminMain admin = new AdminMain();
-                            loggedInID = dt.Rows[0].ItemArray[0].ToString();
+                            loggedInID = dt.Rows[0];
                             admin.Show();
                             this.Hide();
                         }
                         else if (dt.Rows[0].ItemArray[3].ToString() == "2")
                         {
                             TravellerMain traveller = new TravellerMain();
-                            loggedInID = dt.Rows[0].ItemArray[0].ToString();
+                            loggedInID = dt.Rows[0];
                             this.Hide();
                             traveller.Show();
                         }
                         else if (dt.Rows[0].ItemArray[3].ToString() == "3")
                         {
                             EmployerMain Employer = new EmployerMain();
-                            loggedInID = dt.Rows[0].ItemArray[0].ToString();
+                            loggedInID = dt.Rows[0];
                             this.Hide();
                             Employer.Show();
                         }
