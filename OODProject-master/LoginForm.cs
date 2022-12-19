@@ -22,7 +22,7 @@ namespace OODProject
 
         
         SqlConnection conn= new SqlConnection(Program.conn);
-        
+        public static string loggedInID;
         
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace OODProject
 
                 try
                 {
-                    String querry = "select userName, userPassword, roleID From [dbo].[User] where userName = '" + name + "' and userPassword = '" + password + "'";
+                    String querry = "select userID, userName, userPassword, roleID From [dbo].[User] where userName = '" + name + "' and userPassword = '" + password + "'";
                     SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
                     DataTable dt = new DataTable();
@@ -47,21 +47,24 @@ namespace OODProject
                         name = userTextBox.Text;
                         password = passwordTextBox.Text;
 
-                        if (dt.Rows[0].ItemArray[2].ToString() == "1")
+                        if (dt.Rows[0].ItemArray[3].ToString() == "1")
                         {
                             AdminMain admin = new AdminMain();
+                            loggedInID = dt.Rows[0].ItemArray[0].ToString();
                             admin.Show();
                             this.Hide();
                         }
-                        else if (dt.Rows[0].ItemArray[2].ToString() == "2")
+                        else if (dt.Rows[0].ItemArray[3].ToString() == "2")
                         {
                             TravellerMain traveller = new TravellerMain();
+                            loggedInID = dt.Rows[0].ItemArray[0].ToString();
                             this.Hide();
                             traveller.Show();
                         }
-                        else if (dt.Rows[0].ItemArray[2].ToString() == "3")
+                        else if (dt.Rows[0].ItemArray[3].ToString() == "3")
                         {
                             EmployerMain Employer = new EmployerMain();
+                            loggedInID = dt.Rows[0].ItemArray[0].ToString();
                             this.Hide();
                             Employer.Show();
                         }

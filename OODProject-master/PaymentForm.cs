@@ -14,10 +14,9 @@ namespace OODProject
     public partial class PaymentForm : Form
     {
         SqlConnection con = new SqlConnection(Program.conn);
-        DataTable dt;
-        SqlDataAdapter sda;
         SqlCommand cmd;
-
+        Boolean hasPayed = false;
+        Int32 newPaymentID;
         public PaymentForm()
         {
             InitializeComponent();
@@ -31,24 +30,22 @@ namespace OODProject
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
+            cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandType = CommandType.Text;
-
-            cmd.CommandText = "insert into [dbo].[Payment](cardNumber, expiryDate, dateOfPurchase) values(@card, @exp, @date)";
+            cmd.CommandText = "insert into [dbo].[Payment](cardNumber, expiryDate, dateOfPurchase) output inserted.paymentID values(@card, @exp, @date)";
             cmd.Parameters.AddWithValue("@card", cardTextBox.Text);
             cmd.Parameters.AddWithValue("@exp", expireTextBox.Text);
             cmd.Parameters.AddWithValue("@date", DateTime.Now);
 
             try
             {
+
                 con.Open();
                 cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Payment was successfull");
-
-
-                this.DialogResult = DialogResult.OK;
-
+                newPaymentID = (Int32)cmd.ExecuteScalar();
+                hasPayed = true;
+                MessageBox.Show("Success");
             }
             catch (Exception ex)
             {
@@ -59,6 +56,39 @@ namespace OODProject
                 if (con.State == ConnectionState.Open)
                     con.Close();
             }
+        }
+
+        private void bookFlightsBtn_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            if(hasPayed == true)
+            {
+                for (int i = 0; i < EmpUserBooking.userSubset.Rows.Count; i++)
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "insert into [dbo].[Booking](bookingDate, seatNumber, flightID, userID, paymentID) values(@date, @seat, @flight, @user, @payment)";
+                    cmd.Parameters.AddWithValue("@date",DateTime.Now);
+                    cmd.Parameters.AddWithValue("@seat",Convert.ToInt32(EmployerMain.selectedRow.Cells[3].Value) - i);
+                    cmd.Parameters.AddWithValue("@flight", EmployerMain.selectedRow.Cells[0].Value.ToString());
+                    cmd.Parameters.AddWithValue("@user", EmpUserBooking.userSubset.Rows[i].ItemArray[0].ToString());
+                    cmd.Parameters.AddWithValue("@payment", newPaymentID);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                }
+                MessageBox.Show("Success");
+            }
+            con.Close();
+            hasPayed = false;
         }
     }
 }

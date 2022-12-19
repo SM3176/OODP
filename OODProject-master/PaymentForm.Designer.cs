@@ -41,6 +41,7 @@ namespace OODProject
             this.cvcTextBox = new System.Windows.Forms.TextBox();
             this.submitBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.bookFlightsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +58,7 @@ namespace OODProject
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 113);
+            this.label2.Location = new System.Drawing.Point(25, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 18);
             this.label2.TabIndex = 1;
@@ -67,7 +68,7 @@ namespace OODProject
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 149);
+            this.label3.Location = new System.Drawing.Point(25, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 20);
             this.label3.TabIndex = 2;
@@ -77,7 +78,7 @@ namespace OODProject
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(149, 199);
+            this.label4.Location = new System.Drawing.Point(162, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 20);
             this.label4.TabIndex = 3;
@@ -87,7 +88,7 @@ namespace OODProject
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 199);
+            this.label5.Location = new System.Drawing.Point(25, 199);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 20);
             this.label5.TabIndex = 4;
@@ -95,28 +96,28 @@ namespace OODProject
             // 
             // cardTextBox
             // 
-            this.cardTextBox.Location = new System.Drawing.Point(139, 113);
+            this.cardTextBox.Location = new System.Drawing.Point(152, 113);
             this.cardTextBox.Name = "cardTextBox";
             this.cardTextBox.Size = new System.Drawing.Size(207, 20);
             this.cardTextBox.TabIndex = 5;
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(139, 145);
+            this.nameTextBox.Location = new System.Drawing.Point(152, 145);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(207, 20);
             this.nameTextBox.TabIndex = 6;
             // 
             // expireTextBox
             // 
-            this.expireTextBox.Location = new System.Drawing.Point(259, 201);
+            this.expireTextBox.Location = new System.Drawing.Point(272, 201);
             this.expireTextBox.Name = "expireTextBox";
             this.expireTextBox.Size = new System.Drawing.Size(87, 20);
             this.expireTextBox.TabIndex = 7;
             // 
             // cvcTextBox
             // 
-            this.cvcTextBox.Location = new System.Drawing.Point(69, 199);
+            this.cvcTextBox.Location = new System.Drawing.Point(82, 199);
             this.cvcTextBox.Name = "cvcTextBox";
             this.cvcTextBox.Size = new System.Drawing.Size(61, 20);
             this.cvcTextBox.TabIndex = 8;
@@ -124,7 +125,7 @@ namespace OODProject
             // submitBtn
             // 
             this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.Location = new System.Drawing.Point(187, 250);
+            this.submitBtn.Location = new System.Drawing.Point(134, 256);
             this.submitBtn.Margin = new System.Windows.Forms.Padding(2);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(108, 34);
@@ -136,7 +137,7 @@ namespace OODProject
             // backBtn
             // 
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.Location = new System.Drawing.Point(75, 250);
+            this.backBtn.Location = new System.Drawing.Point(14, 256);
             this.backBtn.Margin = new System.Windows.Forms.Padding(2);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(97, 34);
@@ -145,11 +146,24 @@ namespace OODProject
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // bookFlightsBtn
+            // 
+            this.bookFlightsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookFlightsBtn.Location = new System.Drawing.Point(262, 256);
+            this.bookFlightsBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.bookFlightsBtn.Name = "bookFlightsBtn";
+            this.bookFlightsBtn.Size = new System.Drawing.Size(108, 34);
+            this.bookFlightsBtn.TabIndex = 11;
+            this.bookFlightsBtn.Text = "Book Flights";
+            this.bookFlightsBtn.UseVisualStyleBackColor = true;
+            this.bookFlightsBtn.Click += new System.EventHandler(this.bookFlightsBtn_Click);
+            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 345);
+            this.ClientSize = new System.Drawing.Size(384, 314);
+            this.Controls.Add(this.bookFlightsBtn);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cvcTextBox);
@@ -182,5 +196,6 @@ namespace OODProject
         private System.Windows.Forms.TextBox cvcTextBox;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button bookFlightsBtn;
     }
 }

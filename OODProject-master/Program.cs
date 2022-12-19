@@ -9,7 +9,8 @@ namespace OODProject
     static class Program
     {
 
-        public static string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OODP\OODProject-master\Flight.mdf;Integrated Security=True";
+        public static string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\Database.mdf;Integrated Security=True;Connect Timeout=30";
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,7 +19,8 @@ namespace OODProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminMain());
+            //Application.Run(new LoginForm());
+            Application.Run(new EmployerMain());
         }
     }
 }
