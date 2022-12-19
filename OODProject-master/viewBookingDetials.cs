@@ -34,7 +34,8 @@ namespace OODProject
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM [dbo].[Booking] where 1=1 ";
+            cmd.CommandText = "SELECT * FROM [dbo].[Booking] where userID = @user";
+
 
             DataTable dt = new DataTable();
             sda = new SqlDataAdapter(cmd);
@@ -76,7 +77,7 @@ namespace OODProject
             {
 
 
-                cmd.CommandText += "AND FirstName like  @FName ";
+                cmd.CommandText += "AND flightID like  @FName ";
 
                 cmd.Parameters.AddWithValue("@FName", "%" + searchTextBox.Text + "%");
 
