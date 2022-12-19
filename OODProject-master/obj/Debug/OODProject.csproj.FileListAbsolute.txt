@@ -140,8 +140,6 @@ C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\obj\Debug\OODProject.cspro
 C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\obj\Debug\OODProject.csproj.CoreCompileInputs.cache
 C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\obj\Debug\OODProject.exe
 C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\obj\Debug\OODProject.pdb
-C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\bin\Debug\Database.mdf
-C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\bin\Debug\Database_log.ldf
 C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\bin\Debug\OODProject.exe.config
 C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\bin\Debug\OODProject.exe
 C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\bin\Debug\OODProject.pdb
@@ -149,3 +147,5 @@ C:\Users\97337\Source\Repos\OODPPPP\OODProject-master\obj\Debug\OODProject.EmpPr
 D:\OODP\OODProject-master\obj\Debug\OODProject.EmpPreviewUsers.resources
 D:\OODP\OODProject-master\bin\Debug\Flight.mdf
 D:\OODP\OODProject-master\bin\Debug\Flight_log.ldf
+C:\Users\97337\source\repos\OODPPPP\OODProject-master\bin\Debug\Flight.mdf
+C:\Users\97337\source\repos\OODPPPP\OODProject-master\bin\Debug\Flight_log.ldf

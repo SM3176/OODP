@@ -71,6 +71,7 @@ namespace OODProject
         {
             if (selectedRow != null)
             {
+                EmpUserBooking.userSubset.Rows.Add(LoginForm.loggedInID);
                 this.Hide();
                 EmpUserBooking userBooking = new EmpUserBooking();
                 userBooking.ShowDialog();
