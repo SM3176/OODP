@@ -35,13 +35,6 @@ namespace OODProject
             loginForm.Show();
         }
 
-        private void messages_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ViewMessages mess = new ViewMessages();
-            mess.ShowDialog();
-            this.Show();
-        }
 
         private void bFlights_Click(object sender, EventArgs e)
         {
@@ -87,6 +80,14 @@ namespace OODProject
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             EmployerMain.selectedRow = dataGridView1.Rows[e.RowIndex];
+        }
+
+        private void messages_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewMessages mess = new ViewMessages();
+            mess.ShowDialog();
+            this.Show();
         }
     }
 }

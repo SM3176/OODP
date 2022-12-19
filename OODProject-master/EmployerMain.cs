@@ -53,25 +53,11 @@ namespace OODProject
 
         }
 
-        private void vBooking_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            viewBookingDetials vB = new viewBookingDetials();
-            vB.ShowDialog();
-            this.Show();
-        }
-
-        private void backBtn_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-
-        }
 
         private void bkFlight_Click(object sender, EventArgs e)
         {
             if (selectedRow != null)
-            {
-                EmpUserBooking.userSubset.Rows.Add(LoginForm.loggedInID);
+            {                
                 this.Hide();
                 EmpUserBooking userBooking = new EmpUserBooking();
                 userBooking.ShowDialog();
@@ -108,5 +94,46 @@ namespace OODProject
         {
             selectedRow = dataGridView1.Rows[e.RowIndex];
         }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {            
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM [dbo].[Flight] where 1=1 ";
+
+            if (searchTextBox.Text != "")
+            {
+
+
+                cmd.CommandText += "AND airlineName like  @FName ";
+
+                cmd.Parameters.AddWithValue("@FName", "%" + searchTextBox.Text + "%");
+
+            }
+
+
+            try
+            {
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                BindingSource bs = new BindingSource();
+
+                da.Fill(dt);
+                bs.DataSource = dt;
+                dataGridView1.DataSource = bs;
+                bindingNavigator1.BindingSource = bs;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            con.Close();
+        }
     }
+    
 }

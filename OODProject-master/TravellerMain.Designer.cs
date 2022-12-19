@@ -187,6 +187,7 @@ namespace OODProject
             this.messages.TabIndex = 14;
             this.messages.Text = "View Messages ";
             this.messages.UseVisualStyleBackColor = true;
+            this.messages.Click += new System.EventHandler(this.messages_Click_1);
             // 
             // bFlights
             // 

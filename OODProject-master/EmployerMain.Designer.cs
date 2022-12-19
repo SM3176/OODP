@@ -45,8 +45,10 @@ namespace OODProject
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.message = new System.Windows.Forms.Button();
             this.vFlight = new System.Windows.Forms.Button();
-            this.vBooking = new System.Windows.Forms.Button();
             this.logOutBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -55,7 +57,7 @@ namespace OODProject
             // bkFlight
             // 
             this.bkFlight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bkFlight.Location = new System.Drawing.Point(296, 428);
+            this.bkFlight.Location = new System.Drawing.Point(649, 494);
             this.bkFlight.Name = "bkFlight";
             this.bkFlight.Size = new System.Drawing.Size(123, 32);
             this.bkFlight.TabIndex = 0;
@@ -66,7 +68,7 @@ namespace OODProject
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 76);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 142);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(760, 335);
@@ -134,7 +136,6 @@ namespace OODProject
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -182,24 +183,13 @@ namespace OODProject
             // vFlight
             // 
             this.vFlight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vFlight.Location = new System.Drawing.Point(10, 428);
+            this.vFlight.Location = new System.Drawing.Point(12, 494);
             this.vFlight.Name = "vFlight";
             this.vFlight.Size = new System.Drawing.Size(137, 32);
             this.vFlight.TabIndex = 8;
             this.vFlight.Text = "View flight details";
             this.vFlight.UseVisualStyleBackColor = true;
             this.vFlight.Click += new System.EventHandler(this.vFlight_Click);
-            // 
-            // vBooking
-            // 
-            this.vBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vBooking.Location = new System.Drawing.Point(153, 429);
-            this.vBooking.Name = "vBooking";
-            this.vBooking.Size = new System.Drawing.Size(137, 32);
-            this.vBooking.TabIndex = 9;
-            this.vBooking.Text = "View Booking Detials";
-            this.vBooking.UseVisualStyleBackColor = true;
-            this.vBooking.Click += new System.EventHandler(this.vBooking_Click);
             // 
             // logOutBtn
             // 
@@ -212,13 +202,42 @@ namespace OODProject
             this.logOutBtn.UseVisualStyleBackColor = true;
             this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
+            // searchBtn
+            // 
+            this.searchBtn.Location = new System.Drawing.Point(271, 98);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchBtn.TabIndex = 27;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 18);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Airlinename";
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(100, 98);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(164, 20);
+            this.searchTextBox.TabIndex = 25;
+            // 
             // EmployerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 473);
+            this.ClientSize = new System.Drawing.Size(784, 538);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.logOutBtn);
-            this.Controls.Add(this.vBooking);
             this.Controls.Add(this.vFlight);
             this.Controls.Add(this.message);
             this.Controls.Add(this.bindingNavigator1);
@@ -252,7 +271,9 @@ namespace OODProject
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button message;
         private System.Windows.Forms.Button vFlight;
-        private System.Windows.Forms.Button vBooking;
         private System.Windows.Forms.Button logOutBtn;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox searchTextBox;
     }
 }
